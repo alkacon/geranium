@@ -1,0 +1,12 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" 
+	xmlns:cmsInput="urn:import:com.alkacon.geranium.client.ui.input">
+	<ui:with field="layout" type="com.alkacon.geranium.client.ui.css.I_InputLayoutBundle" />
+	<ui:with field="main" type="com.alkacon.geranium.client.ui.css.I_LayoutBundle" />
+	<g:FlowPanel ui:field="m_panel" styleName="{layout.inputCss.selectBoxRoot}" addStyleNames="{main.generalCss.textMedium}">
+		<g:FocusPanel ui:field="m_opener" styleName="{layout.inputCss.selectBoxSelected}">
+		</g:FocusPanel>
+		<cmsInput:ErrorWidget ui:field="m_error" />
+	</g:FlowPanel>
+</ui:UiBinder>

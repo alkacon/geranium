@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.4.0//EN" "http://google-web-toolkit.googlecode.com/svn/tags/2.4.0/distro-source/core/src/gwt-module.dtd">
+<module>
+	<inherits name="com.google.gwt.user.User" />
+	<inherits name="com.google.gwt.i18n.I18N"/>
+    <inherits name="com.google.gwt.json.JSON" />
+	<inherits name="com.google.common.collect.Collect" />
+	
+	<replace-with class="com.alkacon.geranium.client.util.impl.DocumentStyleImplIE6">
+        <when-type-assignable class="com.alkacon.geranium.client.util.impl.DocumentStyleImpl"/>
+        <any>
+        	<when-property-is name="user.agent" value="ie6"/>
+        	<when-property-is name="user.agent" value="ie8"/>
+        </any>
+    </replace-with>
+    
+    <replace-with class="com.alkacon.geranium.client.util.impl.DocumentStyleImplIE9">
+        <when-type-assignable class="com.alkacon.geranium.client.util.impl.DocumentStyleImpl"/>
+        <any>
+        	<when-property-is name="user.agent" value="ie9"/>
+        </any>
+    </replace-with>
+    
+    <replace-with class="com.alkacon.geranium.client.ui.input.impl.LabelNonTextOverflowImpl">
+    	<when-type-assignable class="com.alkacon.geranium.client.ui.input.Label" />
+    	<any>
+    		<when-property-is name="user.agent" value="gecko1_8" />
+    		<when-property-is name="user.agent" value="gecko" />
+    	</any>
+    </replace-with>
+    
+    <replace-with class="com.alkacon.geranium.client.util.impl.DOMImplIE">
+        <when-type-assignable class="com.alkacon.geranium.client.util.impl.DOMImpl"/>
+        <any>
+        	<when-property-is name="user.agent" value="ie6"/>
+        	<when-property-is name="user.agent" value="ie8"/>
+        </any>
+    </replace-with>
+    <replace-with class="com.alkacon.geranium.client.util.impl.DOMImpl">
+        <when-type-assignable class="com.alkacon.geranium.client.util.impl.DOMImpl"/>
+        <any>
+        	<when-property-is name="user.agent" value="ie9"/>
+        </any>
+    </replace-with>
+    
+    <replace-with class="com.alkacon.geranium.client.DefaultUserAgentInfo">
+    	<when-type-is class="com.alkacon.geranium.client.I_UserAgentInfo" />
+    </replace-with>
+    
+    <replace-with class="com.alkacon.geranium.client.IEUserAgentInfo">
+    	<when-type-is class="com.alkacon.geranium.client.I_UserAgentInfo" />
+    	<any>
+    		<when-property-is name="user.agent" value="ie6" />
+    	</any>
+    </replace-with>
+	
+	<source path="client"/>
+</module>

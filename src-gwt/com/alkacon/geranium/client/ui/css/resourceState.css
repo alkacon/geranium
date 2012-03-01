@@ -1,0 +1,13 @@
+.stateNew {
+	color: value("constants.css.textColorNew");
+
+}
+.stateChanged {
+	color: value("constants.css.textColorChanged");
+}
+
+.stateDeleted {
+	text-decoration: line-through;
+}
+
+.noState {}
