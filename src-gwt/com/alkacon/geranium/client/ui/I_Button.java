@@ -27,7 +27,7 @@ package com.alkacon.geranium.client.ui;
 import com.alkacon.geranium.client.Messages;
 import com.alkacon.geranium.client.ui.css.I_LayoutBundle;
 import com.alkacon.geranium.client.ui.css.I_ToolbarButtonLayoutBundle;
-import com.alkacon.geranium.client.ui.css.I_ToolbarButtonLayoutBundle.I_CmsToolbarButtonCss;
+import com.alkacon.geranium.client.ui.css.I_ToolbarButtonLayoutBundle.I_ToolbarButtonCss;
 
 /**
  * Interface to hold button related enumerations. To be used with {@link com.alkacon.geranium.client.ui.PushButton}
@@ -266,5 +266,5 @@ public interface I_Button {
     }
 
     /** The CSS bundle for the toolbar buttons. */
-    I_CmsToolbarButtonCss BUTTON_CSS = I_ToolbarButtonLayoutBundle.INSTANCE.toolbarButtonCss();
+    I_ToolbarButtonCss BUTTON_CSS = I_ToolbarButtonLayoutBundle.INSTANCE.toolbarButtonCss();
 }

@@ -34,7 +34,7 @@ public interface I_ToolbarButtonLayoutBundle extends I_BigIconBundle {
 
     /** The button CSS. */
     @Shared
-    public interface I_CmsToolbarButtonCss extends I_LayoutBundle.I_CmsStateCss {
+    public interface I_ToolbarButtonCss extends I_LayoutBundle.I_StateCss {
 
         /** Access method.<p>
          * 
@@ -148,6 +148,6 @@ public interface I_ToolbarButtonLayoutBundle extends I_BigIconBundle {
      * @return the button CSS
      */
     @Source("toolbarButton.css")
-    I_CmsToolbarButtonCss toolbarButtonCss();
+    I_ToolbarButtonCss toolbarButtonCss();
 
 }

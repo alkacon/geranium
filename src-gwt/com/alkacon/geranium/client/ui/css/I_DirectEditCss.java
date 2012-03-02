@@ -24,7 +24,7 @@
 
 package com.alkacon.geranium.client.ui.css;
 
-import com.alkacon.geranium.client.ui.css.I_ToolbarButtonLayoutBundle.I_CmsToolbarButtonCss;
+import com.alkacon.geranium.client.ui.css.I_ToolbarButtonLayoutBundle.I_ToolbarButtonCss;
 
 import com.google.gwt.resources.client.CssResource.Shared;
 
@@ -32,7 +32,7 @@ import com.google.gwt.resources.client.CssResource.Shared;
  * CSS resource interface for the classic Direct Edit Buttons.<p>
  */
 @Shared
-public interface I_DirectEditCss extends I_CmsToolbarButtonCss {
+public interface I_DirectEditCss extends I_ToolbarButtonCss {
 
     /**
      * CSS class accessor.<p>

@@ -35,7 +35,7 @@ import com.google.gwt.resources.client.CssResource.Shared;
 public interface I_LayoutBundle extends ClientBundle {
 
     /** The context menu CSS classes. */
-    public interface I_CmsAvailabilityCss extends CssResource {
+    public interface I_AvailabilityCss extends CssResource {
 
         /** 
          * Access method.<p>
@@ -95,7 +95,7 @@ public interface I_LayoutBundle extends ClientBundle {
     }
 
     /** Button CSS. */
-    interface I_CmsButtonCss extends I_CmsStateCss {
+    interface I_ButtonCss extends I_StateCss {
 
         /**
          *  Access method.<p>
@@ -211,7 +211,7 @@ public interface I_LayoutBundle extends ClientBundle {
     }
 
     /** The content editor dialog CSS. */
-    interface I_CmsContentEditorCss extends CssResource {
+    interface I_ContentEditorCss extends CssResource {
 
         /** Access method.<p>
          * 
@@ -221,7 +221,7 @@ public interface I_LayoutBundle extends ClientBundle {
     }
 
     /** The context menu CSS classes. */
-    public interface I_CmsContextmenuCss extends I_CmsPopupCss, I_CmsContextmenuItemCss {
+    public interface I_ContextmenuCss extends I_PopupCss, I_ContextmenuItemCss {
 
         /** 
          * Access method.<p>
@@ -262,7 +262,7 @@ public interface I_LayoutBundle extends ClientBundle {
 
     /** The context menu item CSS classes. */
     @Shared
-    public interface I_CmsContextmenuItemCss extends CssResource {
+    public interface I_ContextmenuItemCss extends CssResource {
 
         /** 
          * Access method.<p>
@@ -308,7 +308,7 @@ public interface I_LayoutBundle extends ClientBundle {
     }
 
     /** DateBox css. */
-    public interface I_CmsDateBoxCss extends CssResource {
+    public interface I_DateBoxCss extends CssResource {
 
         /** 
          * Access method.<p>
@@ -334,7 +334,7 @@ public interface I_LayoutBundle extends ClientBundle {
 
     /** Dialog CSS. */
     @Shared
-    interface I_CmsDialogCss extends I_CmsPopupCss {
+    interface I_DialogCss extends I_PopupCss {
 
         /** 
          * Access method.<p>
@@ -493,7 +493,7 @@ public interface I_LayoutBundle extends ClientBundle {
 
     /** The drag and drop CSS used by the base module. */
     @Shared
-    interface I_CmsDragCss extends CssResource {
+    interface I_DragCss extends CssResource {
 
         /** 
          * Access method.<p>
@@ -511,7 +511,7 @@ public interface I_LayoutBundle extends ClientBundle {
     }
 
     /** The error dialog CSS classes. */
-    public interface I_CmsErrorDialogCss extends CssResource {
+    public interface I_ErrorDialogCss extends CssResource {
 
         /** 
          * Access method.<p>
@@ -536,7 +536,7 @@ public interface I_LayoutBundle extends ClientBundle {
     }
 
     /** The context menu CSS classes. */
-    public interface I_CmsFieldsetCss extends CssResource {
+    public interface I_FieldsetCss extends CssResource {
 
         /** 
          * Access method.<p>
@@ -576,7 +576,7 @@ public interface I_LayoutBundle extends ClientBundle {
 
     /** General CSS, used for general re-occurring styles. */
     @Shared
-    interface I_CmsGeneralCss extends CssResource {
+    interface I_GeneralCss extends CssResource {
 
         /** 
          * Access method.<p>
@@ -713,7 +713,7 @@ public interface I_LayoutBundle extends ClientBundle {
     }
 
     /** Header CSS. */
-    interface I_CmsHeaderCss extends CssResource {
+    interface I_HeaderCss extends CssResource {
 
         /** 
          * Access method.<p>
@@ -759,7 +759,7 @@ public interface I_LayoutBundle extends ClientBundle {
     }
 
     /** Highlighting CSS, used within the {@link com.alkacon.geranium.client.ui.HighlightingBorder} widget. */
-    interface I_CmsHighlightCss extends CssResource {
+    interface I_HighlightCss extends CssResource {
 
         /** 
          * Access method.<p>
@@ -812,7 +812,7 @@ public interface I_LayoutBundle extends ClientBundle {
     }
 
     /** Link warning panel CSS. */
-    interface I_CmsLinkWarningCss extends CssResource {
+    interface I_LinkWarningCss extends CssResource {
 
         /** 
          * Access method.<p>
@@ -830,7 +830,7 @@ public interface I_LayoutBundle extends ClientBundle {
     }
 
     /** List item CSS. */
-    interface I_CmsListItemCss extends CssResource {
+    interface I_ListItemCss extends CssResource {
 
         /** 
          * Access method.<p>
@@ -843,7 +843,7 @@ public interface I_LayoutBundle extends ClientBundle {
 
     /** List item CSS. */
     @Shared
-    interface I_CmsListItemWidgetCss extends I_CmsStateCss {
+    interface I_ListItemWidgetCss extends I_StateCss {
 
         /** 
          * Access method.<p>
@@ -1051,7 +1051,7 @@ public interface I_LayoutBundle extends ClientBundle {
     }
 
     /** ListTree CSS. */
-    interface I_CmsListTreeCss extends CssResource {
+    interface I_ListTreeCss extends CssResource {
 
         /** 
          * Access method.<p>
@@ -1146,7 +1146,7 @@ public interface I_LayoutBundle extends ClientBundle {
     }
 
     /** The menu button CSS. */
-    public interface I_CmsMenuButton extends CssResource {
+    public interface I_MenuButton extends CssResource {
 
         /**
          *  Access method.<p>
@@ -1165,7 +1165,7 @@ public interface I_LayoutBundle extends ClientBundle {
 
     /** Notification CSS. */
     @Shared
-    interface I_CmsNotificationCss extends I_CmsPopupCss {
+    interface I_NotificationCss extends I_PopupCss {
 
         /** 
          * Access method.<p>
@@ -1225,7 +1225,7 @@ public interface I_LayoutBundle extends ClientBundle {
     }
 
     /** Page CSS. */
-    interface I_CmsPageCss extends CssResource {
+    interface I_PageCss extends CssResource {
 
         /** 
          * Access method.<p>
@@ -1237,7 +1237,7 @@ public interface I_LayoutBundle extends ClientBundle {
 
     /** Basic popup CSS classes. */
     @Shared
-    public interface I_CmsPopupCss extends CssResource {
+    public interface I_PopupCss extends CssResource {
 
         /** 
          * Access method.<p>
@@ -1255,7 +1255,7 @@ public interface I_LayoutBundle extends ClientBundle {
     }
 
     /** The context menu CSS classes. */
-    public interface I_CmsProgressBarCss extends CssResource {
+    public interface I_ProgressBarCss extends CssResource {
 
         /** 
          * Access method.<p>
@@ -1294,7 +1294,7 @@ public interface I_LayoutBundle extends ClientBundle {
     }
 
     /** The context menu CSS classes. */
-    public interface I_CmsResourceStateCss extends CssResource {
+    public interface I_ResourceStateCss extends CssResource {
 
         /** 
          * Access method.<p>
@@ -1326,7 +1326,7 @@ public interface I_LayoutBundle extends ClientBundle {
     }
 
     /** The select area CSS. */
-    public interface I_CmsSelectArea extends CssResource {
+    public interface I_SelectArea extends CssResource {
 
         /**
          *  Access method.<p>
@@ -1379,7 +1379,7 @@ public interface I_LayoutBundle extends ClientBundle {
     }
 
     /** The single line list item CSS. */
-    public interface I_CmsSingleLineItem extends I_FloatDecoratedPanelCss {
+    public interface I_SingleLineItem extends I_FloatDecoratedPanelCss {
 
         /** 
          * Access method.<p>
@@ -1398,7 +1398,7 @@ public interface I_LayoutBundle extends ClientBundle {
 
     /** General CSS. */
     @Shared
-    interface I_CmsStateCss extends CssResource {
+    interface I_StateCss extends CssResource {
 
         /** 
          * Access method.<p>
@@ -1465,7 +1465,7 @@ public interface I_LayoutBundle extends ClientBundle {
     }
 
     /** Tabbed panel css. */
-    interface I_CmsTabbedPanelCss extends CssResource {
+    interface I_TabbedPanelCss extends CssResource {
 
         /** 
          * Access method.<p>
@@ -1589,7 +1589,7 @@ public interface I_LayoutBundle extends ClientBundle {
 
     /** Toolbar CSS. */
     @Shared
-    interface I_CmsToolbarCss extends CssResource {
+    interface I_ToolbarCss extends CssResource {
 
         /** 
          * Access method.<p>
@@ -1685,7 +1685,7 @@ public interface I_LayoutBundle extends ClientBundle {
      * @return the constants CSS
      */
     @Source("availability.css")
-    I_CmsAvailabilityCss availabilityCss();
+    I_AvailabilityCss availabilityCss();
 
     /**
      * Access method.<p>
@@ -1707,7 +1707,7 @@ public interface I_LayoutBundle extends ClientBundle {
      * @return the button CSS
      */
     @Source("button.css")
-    I_CmsButtonCss buttonCss();
+    I_ButtonCss buttonCss();
 
     /**
      * The CSS constants bundle.<p>
@@ -1723,7 +1723,7 @@ public interface I_LayoutBundle extends ClientBundle {
      */
     @Source("contentEditor.css")
     @CssResource.NotStrict
-    I_CmsContentEditorCss contentEditorCss();
+    I_ContentEditorCss contentEditorCss();
 
     /**
      * Access method.<p>
@@ -1731,7 +1731,7 @@ public interface I_LayoutBundle extends ClientBundle {
      * @return the constants CSS
      */
     @Source("contextmenu.css")
-    I_CmsContextmenuCss contextmenuCss();
+    I_ContextmenuCss contextmenuCss();
 
     /** 
      * Access method.<p>
@@ -1746,7 +1746,7 @@ public interface I_LayoutBundle extends ClientBundle {
      * @return the constants CSS
      */
     @Source("datebox.css")
-    I_CmsDateBoxCss dateBoxCss();
+    I_DateBoxCss dateBoxCss();
 
     /**
      * Access method.<p>
@@ -1754,7 +1754,7 @@ public interface I_LayoutBundle extends ClientBundle {
      * @return the dialog CSS
      */
     @Source("dialog.css")
-    I_CmsDialogCss dialogCss();
+    I_DialogCss dialogCss();
 
     /**
      * Access method.<p>
@@ -1770,7 +1770,7 @@ public interface I_LayoutBundle extends ClientBundle {
      * @return the drag and drop CSS
      */
     @Source("dragdrop.css")
-    I_CmsDragCss dragdropCss();
+    I_DragCss dragdropCss();
 
     /**
      * Access method.<p>
@@ -1778,7 +1778,7 @@ public interface I_LayoutBundle extends ClientBundle {
      * @return the error dialog CSS
      */
     @Source("errorDialog.css")
-    I_CmsErrorDialogCss errorDialogCss();
+    I_ErrorDialogCss errorDialogCss();
 
     /**
      * Access method.<p>
@@ -1786,7 +1786,7 @@ public interface I_LayoutBundle extends ClientBundle {
      * @return the constants CSS
      */
     @Source("fieldset.css")
-    I_CmsFieldsetCss fieldsetCss();
+    I_FieldsetCss fieldsetCss();
 
     /**
      * Access method.<p>
@@ -1802,7 +1802,7 @@ public interface I_LayoutBundle extends ClientBundle {
      * @return the general CSS
      */
     @Source("general.css")
-    I_CmsGeneralCss generalCss();
+    I_GeneralCss generalCss();
 
     /**
      * Access method.<p>
@@ -1817,7 +1817,7 @@ public interface I_LayoutBundle extends ClientBundle {
      * @return the header CSS
      */
     @Source("header.css")
-    I_CmsHeaderCss headerCss();
+    I_HeaderCss headerCss();
 
     /**
      * Access method.<p>
@@ -1825,7 +1825,7 @@ public interface I_LayoutBundle extends ClientBundle {
      * @return the highlight CSS
      */
     @Source("highlight.css")
-    I_CmsHighlightCss highlightCss();
+    I_HighlightCss highlightCss();
 
     /**
      * Returns the image bundle for the input package.<p>
@@ -1840,7 +1840,7 @@ public interface I_LayoutBundle extends ClientBundle {
      * @return the list item CSS 
      */
     @Source("linkWarning.css")
-    I_CmsLinkWarningCss linkWarningCss();
+    I_LinkWarningCss linkWarningCss();
 
     /**
      * Access method.<p>
@@ -1848,7 +1848,7 @@ public interface I_LayoutBundle extends ClientBundle {
      * @return the list item CSS 
      */
     @Source("listitem.css")
-    I_CmsListItemCss listItemCss();
+    I_ListItemCss listItemCss();
 
     /**
      * Access method.<p>
@@ -1857,7 +1857,7 @@ public interface I_LayoutBundle extends ClientBundle {
      */
     @Source("listItemWidget.css")
     @CssResource.NotStrict
-    I_CmsListItemWidgetCss listItemWidgetCss();
+    I_ListItemWidgetCss listItemWidgetCss();
 
     /**
      * Access method.<p>
@@ -1865,7 +1865,7 @@ public interface I_LayoutBundle extends ClientBundle {
      * @return the list tree CSS
      */
     @Source("listtree.css")
-    I_CmsListTreeCss listTreeCss();
+    I_ListTreeCss listTreeCss();
 
     /**
      * Access method.<p>
@@ -1873,7 +1873,7 @@ public interface I_LayoutBundle extends ClientBundle {
      * @return the menu button CSS
      */
     @Source("menuButton.css")
-    I_CmsMenuButton menuButtonCss();
+    I_MenuButton menuButtonCss();
 
     /**
      * Access method.<p>
@@ -1881,7 +1881,7 @@ public interface I_LayoutBundle extends ClientBundle {
      * @return the list item CSS
      */
     @Source("notification.css")
-    I_CmsNotificationCss notificationCss();
+    I_NotificationCss notificationCss();
 
     /**
      * Access method.<p>
@@ -1889,7 +1889,7 @@ public interface I_LayoutBundle extends ClientBundle {
      * @return the constants CSS
      */
     @Source("progressbar.css")
-    I_CmsProgressBarCss progressBarCss();
+    I_ProgressBarCss progressBarCss();
 
     /**
      * Access method.<p>
@@ -1905,7 +1905,7 @@ public interface I_LayoutBundle extends ClientBundle {
      * @return the list item CSS
      */
     @Source("resourceState.css")
-    I_CmsResourceStateCss resourceStateCss();
+    I_ResourceStateCss resourceStateCss();
 
     /**
      * Access method.<p>
@@ -1913,7 +1913,7 @@ public interface I_LayoutBundle extends ClientBundle {
      * @return the select area CSS
      */
     @Source("selectArea.css")
-    I_CmsSelectArea selectAreaCss();
+    I_SelectArea selectAreaCss();
 
     /**
      * Access method.<p>
@@ -1921,7 +1921,7 @@ public interface I_LayoutBundle extends ClientBundle {
      * @return the single line list item CSS
      */
     @Source("singleLineItem.css")
-    I_CmsSingleLineItem singleLineItemCss();
+    I_SingleLineItem singleLineItemCss();
 
     /**
      * Access method. These CSS classes are used to indicate the state of ui items, use them within a dedicated CSS resources.
@@ -1930,7 +1930,7 @@ public interface I_LayoutBundle extends ClientBundle {
      * @return the state CSS
      */
     @Source("state.css")
-    I_CmsStateCss stateCss();
+    I_StateCss stateCss();
 
     /**
      * Access method.<p>
@@ -1938,7 +1938,7 @@ public interface I_LayoutBundle extends ClientBundle {
      * @return tabbed panel CSS
      */
     @Source("tabbedPanel.css")
-    I_CmsTabbedPanelCss tabbedPanelCss();
+    I_TabbedPanelCss tabbedPanelCss();
 
     /**
      * Access method.<p>
@@ -1946,5 +1946,5 @@ public interface I_LayoutBundle extends ClientBundle {
      * @return the toolbar CSS
      */
     @Source("toolbar.css")
-    I_CmsToolbarCss toolbarCss();
+    I_ToolbarCss toolbarCss();
 }

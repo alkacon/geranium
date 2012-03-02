@@ -34,7 +34,7 @@ import com.google.gwt.resources.client.CssResource;
 public interface I_ConstantsBundle extends ClientBundle {
 
     /** Constants CSS. */
-    public interface I_CmsConstantsCss extends CssResource {
+    public interface I_ConstantsCss extends CssResource {
 
         /** 
          * Access method.<p>
@@ -529,5 +529,5 @@ public interface I_ConstantsBundle extends ClientBundle {
      * @return the constants CSS
      */
     @Source("constants.css")
-    I_CmsConstantsCss css();
+    I_ConstantsCss css();
 }

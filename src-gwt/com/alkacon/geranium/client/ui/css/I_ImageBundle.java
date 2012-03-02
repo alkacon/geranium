@@ -24,7 +24,7 @@
 
 package com.alkacon.geranium.client.ui.css;
 
-import com.alkacon.geranium.client.ui.css.I_LayoutBundle.I_CmsContextmenuItemCss;
+import com.alkacon.geranium.client.ui.css.I_LayoutBundle.I_ContextmenuItemCss;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.resources.client.ClientBundle;
@@ -42,7 +42,7 @@ public interface I_ImageBundle extends ClientBundle {
 
     /** The context menu item CSS classes. */
     @Shared
-    public interface I_CmsContextMenuIcons extends I_CmsContextmenuItemCss {
+    public interface I_ContextMenuIcons extends I_ContextmenuItemCss {
 
         /** Access method.<p>
          * 
@@ -150,7 +150,7 @@ public interface I_ImageBundle extends ClientBundle {
 
     /** Bundles the image sprite CSS classes. */
     @Shared
-    interface I_CmsImageStyle extends CssResource {
+    interface I_ImageStyle extends CssResource {
 
         /** 
          * Access method.<p>
@@ -324,7 +324,7 @@ public interface I_ImageBundle extends ClientBundle {
      * @return the button CSS
      */
     @Source("contextMenuIcons.css")
-    I_CmsContextMenuIcons contextMenuIcons();
+    I_ContextMenuIcons contextMenuIcons();
 
     /**
      * Image resource accessor.<p>
@@ -511,7 +511,7 @@ public interface I_ImageBundle extends ClientBundle {
      */
     @NotStrict
     @Source("imageSprites.css")
-    I_CmsImageStyle style();
+    I_ImageStyle style();
 
     /**
      * Access method.<p>
