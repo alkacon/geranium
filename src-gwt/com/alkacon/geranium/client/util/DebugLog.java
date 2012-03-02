@@ -39,8 +39,6 @@ import com.google.gwt.user.client.ui.RootPanel;
 
 /**
  * A basic debug log, to print messages into the client window.<p>
- * 
- * @since 8.0.0
  */
 public final class DebugLog extends Composite {
 

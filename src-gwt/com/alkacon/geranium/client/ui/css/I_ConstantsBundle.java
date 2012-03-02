@@ -30,8 +30,6 @@ import com.google.gwt.resources.client.CssResource;
 
 /**
  * Resource bundle to access CSS constants.
- * 
- * @since 8.0.0
  */
 public interface I_ConstantsBundle extends ClientBundle {
 

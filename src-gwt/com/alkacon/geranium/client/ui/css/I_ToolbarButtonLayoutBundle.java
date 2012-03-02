@@ -29,8 +29,6 @@ import com.google.gwt.resources.client.CssResource.Shared;
 
 /**
  * Resource bundle to access CSS and image resources for tool-bar buttons.<p>
- * 
- * @since 8.0.0
  */
 public interface I_ToolbarButtonLayoutBundle extends I_BigIconBundle {
 

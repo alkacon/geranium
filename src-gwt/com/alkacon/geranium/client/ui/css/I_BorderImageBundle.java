@@ -32,8 +32,6 @@ import com.google.gwt.resources.client.ImageResource.RepeatStyle;
 
 /**
  * Resource bundle to access border image resources.<p>
- * 
- * @since 8.0.0
  */
 public interface I_BorderImageBundle extends ClientBundle {
 

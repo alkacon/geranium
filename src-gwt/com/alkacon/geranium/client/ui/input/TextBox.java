@@ -64,9 +64,6 @@ import com.google.gwt.user.client.ui.FlowPanel;
 
 /**
  * Basic text box class for forms.
- * 
- * @since 8.0.0
- * 
  */
 public class TextBox extends Composite
 implements I_FormWidget, I_HasInit, HasFocusHandlers, HasBlurHandlers, HasValueChangeHandlers<String>,

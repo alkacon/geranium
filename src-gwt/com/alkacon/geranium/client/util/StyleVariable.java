@@ -31,9 +31,6 @@ import com.google.gwt.user.client.ui.UIObject;
  * 
  * Every time a new value is set, the previous value of the style variable will be removed
  * from all associated UI objects, and the new style name will be added.
- * 
- * @since 8.0.0
- * 
  */
 public class StyleVariable {
 

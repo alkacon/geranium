@@ -26,8 +26,6 @@ package com.alkacon.geranium.client;
 
 /**
  * Convenience class to access the localized messages of this OpenCms package.<p> 
- * 
- * @since 8.0.0
  */
 public final class Messages {
 

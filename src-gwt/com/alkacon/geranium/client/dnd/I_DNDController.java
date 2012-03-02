@@ -28,8 +28,6 @@ package com.alkacon.geranium.client.dnd;
  * Drag and drop controller.<p>
  * 
  * Implement and assign to the {@link DNDHandler} to control the drag process as well as the underlying model.<p>
- * 
- * @since 8.0.0
  */
 public interface I_DNDController {
 

@@ -34,8 +34,6 @@ import com.google.gwt.i18n.client.Dictionary;
 /**
  * Reads localized resource Strings from a <code>java.util.ResourceBundle</code> 
  * and provides convenience methods to access the Strings from a template.<p>
- * 
- * @since 8.0.0
  */
 public class Messages {
 

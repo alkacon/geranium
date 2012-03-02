@@ -28,8 +28,6 @@ import com.google.gwt.resources.client.CssResource;
 
 /**
  * Css resource.<p>
- * 
- * @since 8.0.0
  */
 public interface I_InputCss extends CssResource {
 

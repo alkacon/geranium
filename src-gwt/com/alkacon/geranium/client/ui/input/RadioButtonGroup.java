@@ -30,8 +30,6 @@ import com.google.gwt.event.logical.shared.ValueChangeEvent;
 /**
  * This class coordinates multiple radio buttons and makes sure that when a radio button of a group is
  * selected, no other radio button of the same group is selected.<p>
- * 
- * @since 8.0.0
  */
 public class RadioButtonGroup {
 

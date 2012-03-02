@@ -32,8 +32,6 @@ import com.google.gwt.user.client.Timer;
 
 /**
  * On hover intent handler.<p>
- * 
- * @since 8.0.0
  */
 public abstract class A_HoverHandler implements MouseOutHandler, MouseOverHandler {
 

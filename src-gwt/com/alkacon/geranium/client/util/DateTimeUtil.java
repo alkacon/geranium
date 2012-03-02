@@ -29,11 +29,7 @@ import java.util.Date;
 import com.google.gwt.i18n.client.DateTimeFormat;
 
 /**
- * Client side implementation for {@link org.opencms.util.CmsDateUtil}.<p>
- * 
- * @since 8.0.0 
- * 
- * @see org.opencms.util.CmsDateUtil
+ * Date utility.<p>
  */
 public final class DateTimeUtil {
 

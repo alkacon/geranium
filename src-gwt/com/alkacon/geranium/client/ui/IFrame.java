@@ -33,8 +33,6 @@ import com.google.gwt.user.client.ui.Frame;
  * 
  * This is necessary, as {@link com.google.gwt.user.client.ui.Frame} won't assign a name attribute on element creation.
  * This is needed, ass setting or changing this attribute later won't have any effect in IE.<p> 
- * 
- * @since 8.0.0
  */
 public class IFrame extends Frame {
 

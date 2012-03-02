@@ -34,8 +34,6 @@ import com.google.gwt.user.client.ui.Widget;
 
 /**
  * Displays a message text with an icon in front. Default is the 'warning' icon.<p>
- * 
- * @since 8.0.1
  */
 public class MessageWidget extends Widget {
 

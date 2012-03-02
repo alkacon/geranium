@@ -37,8 +37,6 @@ import com.google.gwt.user.client.ui.Widget;
 
 /**
  * The toolbar notification widget.<p>
- * 
- * @since 8.0.0
  */
 public class DialogNotificationWidget extends A_NotificationWidget {
 

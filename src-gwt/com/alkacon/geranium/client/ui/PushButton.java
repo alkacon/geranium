@@ -37,8 +37,6 @@ import com.google.gwt.user.client.ui.HasHorizontalAlignment;
  * Push button class.<p>
  * 
  * Uses CSS classes cmsState and dependent from 'button.css', make sure it is injected.<p>
- * 
- * @since 8.0.0
  */
 public class PushButton extends com.google.gwt.user.client.ui.PushButton implements HasHorizontalAlignment {
 

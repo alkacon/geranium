@@ -33,8 +33,6 @@ import com.google.gwt.user.client.ui.UIObject;
 
 /**
  * Bean holding the position data of a HTML DOM element.<p>
- * 
- * @since 8.0.0
  */
 public class PositionBean {
 

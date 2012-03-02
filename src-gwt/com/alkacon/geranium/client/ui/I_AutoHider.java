@@ -28,8 +28,6 @@ import com.google.gwt.dom.client.Element;
 
 /**
  * Interface for all widgets capable of auto hide.<p>
- * 
- * @since 8.0.0
  */
 public interface I_AutoHider {
 

@@ -41,8 +41,6 @@ import com.google.gwt.user.client.ui.Widget;
 
 /**
  * Provides a tool-bar to be shown at the top of a page.<p>
- * 
- * @since 8.0.0
  */
 public class Toolbar extends Composite {
 

@@ -35,8 +35,6 @@ import com.google.gwt.user.client.ui.HTMLPanel;
 
 /**
  * A HTML Panel implementation toggles the I_CmsStateCss.cmsHovering CSS class on mouse over.<p>
- * 
- * @since 8.0.0
  */
 public class HTMLHoverPanel extends HTMLPanel implements HasMouseOutHandlers, HasMouseOverHandlers {
 

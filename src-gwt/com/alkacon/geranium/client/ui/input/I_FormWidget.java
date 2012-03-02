@@ -28,8 +28,6 @@ import com.alkacon.geranium.client.ui.I_AutoHider;
 
 /**
  * Basic interface for all widgets that can be used for form fields.<p>
- * 
- * @since 8.0.0
  */
 public interface I_FormWidget {
 

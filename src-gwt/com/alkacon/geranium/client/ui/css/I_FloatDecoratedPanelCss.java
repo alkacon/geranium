@@ -29,8 +29,6 @@ import com.google.gwt.resources.client.CssResource.Shared;
 
 /**
  * CSS resource for the CmsFloatDecoratedPanel class.<p>
- * 
- * @since 8.0.0
  */
 @Shared
 public interface I_FloatDecoratedPanelCss extends CssResource {

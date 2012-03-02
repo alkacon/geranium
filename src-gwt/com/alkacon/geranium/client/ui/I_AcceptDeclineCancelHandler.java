@@ -26,8 +26,6 @@ package com.alkacon.geranium.client.ui;
 
 /**
  * Handles the clicks on the 'Yes', 'No' and 'Cancel' buttons of the dialog.<p> 
- * 
- * @since 8.0.0
  */
 public interface I_AcceptDeclineCancelHandler extends I_CloseDialogHandler {
 

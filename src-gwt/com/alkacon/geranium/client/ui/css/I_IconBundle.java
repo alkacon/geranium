@@ -30,8 +30,6 @@ import com.google.gwt.resources.client.ImageResource;
 
 /**
  * Image bundle for smaller icons.<p>
- * 
- * @since 8.0.0
  */
 public interface I_IconBundle extends ClientBundle {
 

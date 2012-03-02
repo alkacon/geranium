@@ -31,8 +31,6 @@ import com.google.gwt.resources.client.CssResource.Shared;
 
 /**
  * Resource bundle to access CSS and image resources.
- * 
- * @since 8.0.0
  */
 public interface I_LayoutBundle extends ClientBundle {
 

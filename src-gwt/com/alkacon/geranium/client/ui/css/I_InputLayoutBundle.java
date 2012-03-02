@@ -29,8 +29,6 @@ import com.google.gwt.resources.client.ClientBundle;
 
 /**
  * Layout bundle.<p>
- * 
- * @since 8.0.0
  */
 public interface I_InputLayoutBundle extends ClientBundle {
 

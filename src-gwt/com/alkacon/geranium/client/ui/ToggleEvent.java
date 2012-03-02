@@ -28,9 +28,6 @@ import com.google.gwt.event.shared.GwtEvent;
 
 /**
  * Event to be fired by a widget being activated or deactivated.<p>
- * 
- * @since 8.0.0
- * 
  */
 public class ToggleEvent extends GwtEvent<I_ToggleHandler> {
 

@@ -32,8 +32,6 @@ import com.google.gwt.dom.client.Element;
 
 /**
  * Single line label implementation for gecko based browsers which don't support CSS property 'text-overflow'.<p>
- * 
- * @since 8.0.0
  */
 public class LabelNonTextOverflowImpl extends Label {
 

@@ -29,8 +29,6 @@ import com.google.gwt.resources.client.ImageResource;
 
 /**
  * Image bundle for big icons.
- * 
- * @since 8.0.0
  */
 public interface I_BigIconBundle extends ClientBundle {
 

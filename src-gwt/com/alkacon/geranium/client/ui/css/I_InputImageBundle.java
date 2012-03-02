@@ -31,8 +31,6 @@ import com.google.gwt.resources.client.ImageResource.RepeatStyle;
 
 /**
  * Image bundle for this package.<p>
- * 
- * @since 8.0.0
  */
 public interface I_InputImageBundle extends ClientBundle {
 

@@ -40,8 +40,6 @@ import com.google.gwt.user.client.ui.Widget;
 
 /**
  * Provides an alert dialog with a button.<p>
- * 
- * @since 8.0.0
  */
 public class AlertDialog extends Popup implements I_Truncable {
 

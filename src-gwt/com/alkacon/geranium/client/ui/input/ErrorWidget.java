@@ -35,8 +35,6 @@ import com.google.gwt.user.client.ui.Label;
 
 /**
  * Helper class for displaying errors.<p>
- * 
- * @since 8.0.0
  */
 public class ErrorWidget extends Composite {
 

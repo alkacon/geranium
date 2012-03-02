@@ -48,9 +48,6 @@ import com.google.gwt.user.client.ui.Panel;
  * This is mostly a 'convenience widget' for creating and handling multiple radio buttons as a single widget.
  * The radio buttons will be layed out vertically. If you need more control about the layout of the radio 
  * buttons, use multiple {@link RadioButton} instances and link them with a {@link RadioButtonGroup}.<p>
- * 
- * @since 8.0.0
- * 
  */
 public class RadioButtonGroupWidget extends Composite
 implements I_FormWidget, HasValueChangeHandlers<String>, I_HasInit {

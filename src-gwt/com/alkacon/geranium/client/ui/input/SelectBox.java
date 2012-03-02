@@ -34,9 +34,6 @@ import java.util.Map;
 /**
  * Widget for selecting one of multiple items from a drop-down list which opens
  * after the user clicks on the widget.<p>
- * 
- * @since 8.0.0
- * 
  */
 public class SelectBox extends A_SelectBox<LabelSelectCell> implements I_HasInit, I_HasGhostValue {
 

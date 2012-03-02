@@ -39,8 +39,6 @@ import com.google.gwt.user.client.ui.HTML;
 
 /**
  * A Widget to display a highlighting border around a specified position.<p>
- * 
- * @since 8.0.0
  */
 public class HighlightingBorder extends Composite {
 

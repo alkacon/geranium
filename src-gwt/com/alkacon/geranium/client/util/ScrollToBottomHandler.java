@@ -33,8 +33,6 @@ import com.google.gwt.user.client.ui.Widget;
 
 /**
  * Scroll handler which executes an action when the user has scrolled to the bottom.<p>
- * 
- * @since 8.0.0
  */
 public class ScrollToBottomHandler implements ScrollHandler {
 

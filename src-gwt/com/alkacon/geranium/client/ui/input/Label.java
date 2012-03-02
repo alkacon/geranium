@@ -37,8 +37,6 @@ import com.google.gwt.dom.client.Style.Unit;
 
 /**
  * Single line label with text truncation and tool tip.<p>
- * 
- * @since 8.0.0
  */
 public class Label extends com.google.gwt.user.client.ui.Label implements I_Truncable {
 

@@ -32,8 +32,6 @@ import com.google.gwt.user.client.Element;
 
 /**
  * A convenience class for creating inline labels.<p>
- * 
- * @since 8.0.0
  */
 public class InlineLabel extends Label {
 

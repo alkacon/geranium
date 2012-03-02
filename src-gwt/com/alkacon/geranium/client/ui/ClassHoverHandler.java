@@ -32,8 +32,6 @@ import com.google.gwt.event.dom.client.MouseOverEvent;
 
 /**
  * Event handler to toggle the {@link com.alkacon.geranium.client.ui.css.I_LayoutBundle.I_CmsStateCss#cmsHovering()} class on mouse out/over.<p>
- * 
- * @since 8.0.0
  */
 public class ClassHoverHandler extends A_HoverHandler {
 

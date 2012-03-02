@@ -50,8 +50,6 @@ import com.google.gwt.user.client.ui.RootPanel;
 
 /**
  * Drag and drop handler.<p>
- * 
- * @since 8.0.0
  */
 public class DNDHandler implements MouseDownHandler {
 
@@ -68,7 +66,7 @@ public class DNDHandler implements MouseDownHandler {
     /**
      * Timer to schedule automated scrolling.<p>
      */
-    protected class CmsScrollTimer extends Timer {
+    protected class ScrollTimer extends Timer {
 
         /** The current scroll direction. */
         private Direction m_direction;
@@ -89,7 +87,7 @@ public class DNDHandler implements MouseDownHandler {
          * @param scrollSpeed the scroll speed
          * @param direction the scroll direction
          */
-        public CmsScrollTimer(Element scrollParent, int scrollSpeed, Direction direction) {
+        public ScrollTimer(Element scrollParent, int scrollSpeed, Direction direction) {
 
             m_scrollParent = scrollParent;
             m_scrollSpeed = scrollSpeed;
@@ -873,7 +871,7 @@ public class DNDHandler implements MouseDownHandler {
                 clearScrollTimer();
             }
             if ((direction != null) && (m_scrollTimer == null)) {
-                m_scrollTimer = new CmsScrollTimer(RootPanel.getBodyElement(), 20, direction);
+                m_scrollTimer = new ScrollTimer(RootPanel.getBodyElement(), 20, direction);
                 m_scrollTimer.scheduleRepeating(10);
             }
 

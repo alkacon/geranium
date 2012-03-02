@@ -26,8 +26,6 @@ package com.alkacon.geranium.client.ui;
 
 /**
  * Interface for truncable UI elements.<p>
- * 
- * @since 8.0.0
  */
 public interface I_Truncable {
 

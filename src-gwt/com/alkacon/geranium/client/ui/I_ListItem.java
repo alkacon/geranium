@@ -30,8 +30,6 @@ import com.google.gwt.user.client.ui.Widget;
 
 /**
  * Provides a UI list item.<p>
- * 
- * @since 8.0.0
  */
 public interface I_ListItem extends I_Truncable, I_Draggable {
 

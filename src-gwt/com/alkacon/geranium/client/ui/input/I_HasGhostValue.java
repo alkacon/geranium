@@ -28,8 +28,6 @@ package com.alkacon.geranium.client.ui.input;
  * Interface for widgets which can contain a "ghost value".<p>
  * 
  * A ghost value will be displayed, but not reported when asking the widget for its current value.<p>
- * 
- * @since 8.0.0
  */
 public interface I_HasGhostValue {
 

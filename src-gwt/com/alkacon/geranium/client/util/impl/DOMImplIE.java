@@ -30,8 +30,6 @@ import com.google.gwt.dom.client.Document;
  * Helper class for DOM operations not made available by the GWT core classes.<p>
  * 
  * Implementation for all MSIE browsers.<p>
- * 
- * @since 8.0.0
  */
 public class DOMImplIE extends DOMImpl {
 
@@ -40,10 +38,10 @@ public class DOMImplIE extends DOMImpl {
      */
     @Override
     public native com.google.gwt.dom.client.Element createIFrameElement(Document doc, String name) /*-{
-                                                                                                   // attributes need to be set at creation of the iframe DOM element to take effect in rendering
-                                                                                                   return doc
-                                                                                                   .createElement("<iframe name='"
-                                                                                                   + name
-                                                                                                   + "' allowtransparency='true' frameborder='0' scrolling='no' framespacing='0' />");
-                                                                                                   }-*/;
+        // attributes need to be set at creation of the iframe DOM element to take effect in rendering
+        return doc
+                .createElement("<iframe name='"
+                        + name
+                        + "' allowtransparency='true' frameborder='0' scrolling='no' framespacing='0' />");
+    }-*/;
 }

@@ -32,8 +32,6 @@ import com.google.gwt.event.dom.client.ClickHandler;
 
 /**
  * Provides a confirmation dialog with yes, no and cancel button.<p>
- * 
- * @since 8.0.0
  */
 public class AcceptDeclineCancelDialog extends AlertDialog {
 

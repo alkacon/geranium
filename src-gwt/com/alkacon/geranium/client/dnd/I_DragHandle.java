@@ -29,8 +29,6 @@ import com.google.gwt.event.dom.client.HasMouseDownHandlers;
 
 /**
  * Drag and drop drag handle.<p>
- * 
- * @since 8.0.0
  */
 public interface I_DragHandle extends HasMouseDownHandlers {
 

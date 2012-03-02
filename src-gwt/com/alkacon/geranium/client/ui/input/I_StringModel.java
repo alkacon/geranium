@@ -28,8 +28,6 @@ import com.google.gwt.event.logical.shared.HasValueChangeHandlers;
 
 /**
  * The interface for a string model.<p>
- * 
- * @since 8.0.0
  */
 public interface I_StringModel extends HasValueChangeHandlers<String> {
 

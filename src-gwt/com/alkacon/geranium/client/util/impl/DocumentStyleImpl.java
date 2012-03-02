@@ -32,8 +32,6 @@ import com.google.gwt.dom.client.Element;
  * Helper class to retrieve the computed style of an element.<p>
  * 
  * This implementation is used for all none MSIE browsers.<p>
- * 
- * @since 8.0.0
  */
 public class DocumentStyleImpl {
 
@@ -45,10 +43,10 @@ public class DocumentStyleImpl {
      * @return the javascript property name
      */
     protected static native String camelize(String s)/*-{
-                                                     return s.replace(/\-(\w)/g, function(all, letter) {
-                                                     return letter.toUpperCase();
-                                                     });
-                                                     }-*/;
+        return s.replace(/\-(\w)/g, function(all, letter) {
+            return letter.toUpperCase();
+        });
+    }-*/;
 
     /**
      * Removes the opacity attribute from the element's inline-style.<p>
@@ -56,8 +54,8 @@ public class DocumentStyleImpl {
      * @param element the DOM element to manipulate
      */
     public native void clearOpacity(Element element) /*-{
-                                                     element.style.removeProperty("opacity");
-                                                     }-*/;
+        element.style.removeProperty("opacity");
+    }-*/;
 
     /**
      * Returns the computed style of the given element.<p>
@@ -104,8 +102,8 @@ public class DocumentStyleImpl {
      * @return the result
      */
     protected native String hyphenize(String name) /*-{
-                                                   return name.replace(/([A-Z])/g, "-$1").toLowerCase();
-                                                   }-*/;
+        return name.replace(/([A-Z])/g, "-$1").toLowerCase();
+    }-*/;
 
     /**
      * Returns the computed style from the DOM object.<p>
@@ -116,29 +114,29 @@ public class DocumentStyleImpl {
      * @return the property value
      */
     protected native String getComputedStyle(Element elem, String name) /*-{
-                                                                        var cStyle = $doc.defaultView.getComputedStyle(elem, null);
-                                                                        if (cStyle == null) {
-                                                                        return null;
-                                                                        }
-                                                                        var value = cStyle.getPropertyValue(name);
-                                                                        if (value == "auto" && (name == "width" || name == "height")) {
-                                                                        var which = name === "width" ? [ "Left", "Right" ] : [ "Top",
-                                                                        "Bottom" ];
-                                                                        function getWH() {
-                                                                        var val;
-                                                                        val = name === "width" ? elem.offsetWidth : elem.offsetHeight;
-                                                                        for ( var i = 0; i < which.length; i++) {
-                                                                        val -= parseFloat(getComputedStyle(elem, "padding"
-                                                                        + which[i])) || 0;
-                                                                        val -= parseFloat(getComputedStyle(elem, "border"
-                                                                        + which[i] + "Width")) || 0;
+        var cStyle = $doc.defaultView.getComputedStyle(elem, null);
+        if (cStyle == null) {
+            return null;
+        }
+        var value = cStyle.getPropertyValue(name);
+        if (value == "auto" && (name == "width" || name == "height")) {
+            var which = name === "width" ? [ "Left", "Right" ] : [ "Top",
+                    "Bottom" ];
+            function getWH() {
+                var val;
+                val = name === "width" ? elem.offsetWidth : elem.offsetHeight;
+                for ( var i = 0; i < which.length; i++) {
+                    val -= parseFloat(getComputedStyle(elem, "padding"
+                            + which[i])) || 0;
+                    val -= parseFloat(getComputedStyle(elem, "border"
+                            + which[i] + "Width")) || 0;
 
-                                                                        }
-                                                                        return Math.max(0, Math.round(val));
-                                                                        }
-                                                                        value = getWH() + "px";
-                                                                        }
+                }
+                return Math.max(0, Math.round(val));
+            }
+            value = getWH() + "px";
+        }
 
-                                                                        return value;
-                                                                        }-*/;
+        return value;
+    }-*/;
 }

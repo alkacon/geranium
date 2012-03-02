@@ -39,9 +39,6 @@ import com.google.gwt.user.client.ui.SimplePanel;
  * after insertion into the DOM.<p>
  * 
  * It only works with a single child widget right now and thus extends SimplePanel. 
- * 
- * @since 8.0.0
- * 
  */
 public class PaddedPanel extends SimplePanel {
 

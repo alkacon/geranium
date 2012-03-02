@@ -31,8 +31,6 @@ import com.google.gwt.user.client.Command;
 
 /**
  * Changes the elements height until the target height is reached.<p>
- * 
- * @since 8.0.0
  */
 public class ChangeHeightAnimation extends A_Animation {
 

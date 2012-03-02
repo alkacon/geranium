@@ -28,8 +28,6 @@ import com.google.gwt.dom.client.Element;
 
 /**
  * Interface defining all methods used by drag and drop on a draggable element.<p>
- * 
- * @since 8.0.0
  */
 public interface I_Draggable {
 
@@ -71,15 +69,6 @@ public interface I_Draggable {
      * @return the drag placeholder element
      */
     Element getPlaceholder(I_DropTarget target);
-
-    /**
-     * Checks whether the drag item has a given tag.<p>
-     * 
-     * @param tag the tag to check
-     *  
-     * @return true if the drag item has the tag 
-     */
-    boolean hasTag(String tag);
 
     /**
      * Executed on drag cancel.<p>

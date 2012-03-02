@@ -35,8 +35,6 @@ import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 
 /**
  * Tool-bar button class.<p>
- * 
- * @since 8.0.0
  */
 public class ToggleButton extends com.google.gwt.user.client.ui.ToggleButton implements HasHorizontalAlignment {
 

@@ -33,9 +33,6 @@ import java.util.List;
  * sum of item sizes in the batch greater or equal than a given parameter.<p>
  * 
  * @param <T> the type of items in the list to be partitioned
- * 
- * @since 8.0.0
- *  
  */
 public class ListSplitter<T extends I_CmsHasSize> {
 

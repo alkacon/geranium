@@ -29,8 +29,6 @@ import com.google.gwt.user.client.Command;
 
 /**
  * Abstract animation class.<p>
- * 
- * @since 8.0.0
  */
 public abstract class A_Animation extends Animation {
 

@@ -34,8 +34,6 @@ import com.google.gwt.event.shared.SimpleEventBus;
 
 /**
  * The default string model implementation.<p>
- * 
- * @since 8.0.0
  */
 public class DefaultStringModel implements I_StringModel {
 

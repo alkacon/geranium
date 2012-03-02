@@ -36,9 +36,6 @@ import com.google.gwt.user.client.ui.Panel;
 
 /**
  * Basic text area widget for forms.<p>
- * 
- * @since 8.0.0
- * 
  */
 public class TextArea extends Composite implements I_FormWidget, I_HasInit {
 

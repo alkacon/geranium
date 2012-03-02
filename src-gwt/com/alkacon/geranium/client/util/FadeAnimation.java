@@ -29,8 +29,6 @@ import com.google.gwt.user.client.Command;
 
 /**
  * Fade animation. Fading the element into view or fading it out.<p>
- * 
- * @since 8.0.0
  */
 public class FadeAnimation extends A_Animation {
 

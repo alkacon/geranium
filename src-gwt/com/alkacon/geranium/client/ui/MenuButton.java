@@ -49,8 +49,6 @@ import com.google.gwt.user.client.ui.Widget;
 
 /**
  * Provides a menu button.<p>
- * 
- * @since 8.0.0
  */
 public class MenuButton extends Composite implements HasClickHandlers {
 

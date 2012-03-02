@@ -28,9 +28,6 @@ import com.google.gwt.event.shared.EventHandler;
 
 /**
  * Interface for on toggle event handler.<p>
- * 
- * @since 8.0.0
- * 
  */
 public interface I_ToggleHandler extends EventHandler {
 

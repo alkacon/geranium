@@ -35,8 +35,6 @@ import com.google.gwt.user.client.ui.Composite;
 
 /**
  * The notification widget.<p>
- * 
- * @since 8.0.0
  */
 public abstract class A_NotificationWidget extends Composite implements I_NotificationWidget {
 

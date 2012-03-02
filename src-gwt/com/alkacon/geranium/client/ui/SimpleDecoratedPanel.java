@@ -39,9 +39,6 @@ import com.google.gwt.user.client.ui.Widget;
  * 
  * This widget does not calculate the width of the decoration panel automatically. You have to pass the appropriate width
  * as a parameter to the constructor.
- * 
- * @since 8.0.0
- * 
  */
 public class SimpleDecoratedPanel extends Composite implements I_Truncable {
 

@@ -32,8 +32,6 @@ import java.util.Set;
 
 /**
  * A utility class with functions for dealing with maps.<p>
- * 
- * @since 8.0.0
  */
 public final class CollectionUtil {
 

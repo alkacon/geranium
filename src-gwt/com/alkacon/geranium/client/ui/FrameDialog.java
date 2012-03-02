@@ -49,8 +49,6 @@ import com.google.gwt.user.client.ui.Widget;
  * May also be used to wrap the popup if no iFrame is needed.<p>
  * 
  * Provides function to show an iFrame dialog.<p>
- * 
- * @since 8.5
  */
 public class FrameDialog {
 
@@ -125,12 +123,12 @@ public class FrameDialog {
      * @return <code>true</code> if the parent frame is available
      */
     public static native boolean hasParentFrame() /*-{
-                                                  if ($wnd.parent[@com.alkacon.geranium.client.ui.FrameDialog::CLOSE_FUNCTION]) {
-                                                  return true;
-                                                  }
-                                                  return false;
+        if ($wnd.parent[@com.alkacon.geranium.client.ui.FrameDialog::CLOSE_FUNCTION]) {
+            return true;
+        }
+        return false;
 
-                                                  }-*/;
+    }-*/;
 
     /**
      * Shows an iFrame dialog popup.<p>
@@ -177,11 +175,11 @@ public class FrameDialog {
      * Removes exported functions from the window context.<p>
      */
     protected static native void removeExportedFunctions() /*-{
-                                                           $wnd[@com.alkacon.geranium.client.ui.FrameDialog::CLOSE_FUNCTION] = null;
-                                                           $wnd[@com.alkacon.geranium.client.ui.FrameDialog::HEIGHT_FUNCTION] = null;
-                                                           $wnd[@com.alkacon.geranium.client.ui.FrameDialog::WIDTH_FUNCTION] = null;
-                                                           $wnd[@com.alkacon.geranium.client.ui.FrameDialog::TITLE_FUNCTION] = null;
-                                                           }-*/;
+        $wnd[@com.alkacon.geranium.client.ui.FrameDialog::CLOSE_FUNCTION] = null;
+        $wnd[@com.alkacon.geranium.client.ui.FrameDialog::HEIGHT_FUNCTION] = null;
+        $wnd[@com.alkacon.geranium.client.ui.FrameDialog::WIDTH_FUNCTION] = null;
+        $wnd[@com.alkacon.geranium.client.ui.FrameDialog::TITLE_FUNCTION] = null;
+    }-*/;
 
     /**
      * Installs the Javascript function which should be called by the child iframe when the dialog should be closed.<p>
@@ -189,33 +187,33 @@ public class FrameDialog {
      * @param popup the popup
      */
     private static native void exportDialogFunctions(final Popup popup) /*-{
-                                                                        var self = this;
-                                                                        $wnd[@com.alkacon.geranium.client.ui.FrameDialog::CLOSE_FUNCTION] = function() {
-                                                                        popup.@com.alkacon.geranium.client.ui.Popup::hide()();
-                                                                        };
-                                                                        $wnd[@com.alkacon.geranium.client.ui.FrameDialog::HEIGHT_FUNCTION] = function(
-                                                                        height) {
-                                                                        popup.@com.alkacon.geranium.client.ui.Popup::setHeight(I)(height);
-                                                                        if (popup.@com.alkacon.geranium.client.ui.Popup::isShowing()) {
-                                                                        popup.@com.alkacon.geranium.client.ui.Popup::center()();
-                                                                        }
-                                                                        };
-                                                                        $wnd[@com.alkacon.geranium.client.ui.FrameDialog::WIDTH_FUNCTION] = function(
-                                                                        width) {
-                                                                        popup.@com.alkacon.geranium.client.ui.Popup::setWidth(I)(width);
-                                                                        if (popup.@com.alkacon.geranium.client.ui.Popup::isShowing()) {
-                                                                        popup.@com.alkacon.geranium.client.ui.Popup::center()();
-                                                                        }
-                                                                        };
-                                                                        $wnd[@com.alkacon.geranium.client.ui.FrameDialog::TITLE_FUNCTION] = function(
-                                                                        title) {
-                                                                        popup.@com.alkacon.geranium.client.ui.Popup::setCaption(Ljava/lang/String;)(title);
-                                                                        };
-                                                                        $wnd[@com.alkacon.geranium.client.ui.FrameDialog::ENABLE_CLOSE_FUNCTION] = function(
-                                                                        title) {
-                                                                        popup.@com.alkacon.geranium.client.ui.Popup::addDialogClose(Lcom/google/gwt/user/client/Command;)(null);
-                                                                        };
-                                                                        }-*/;
+        var self = this;
+        $wnd[@com.alkacon.geranium.client.ui.FrameDialog::CLOSE_FUNCTION] = function() {
+            popup.@com.alkacon.geranium.client.ui.Popup::hide()();
+        };
+        $wnd[@com.alkacon.geranium.client.ui.FrameDialog::HEIGHT_FUNCTION] = function(
+                height) {
+            popup.@com.alkacon.geranium.client.ui.Popup::setHeight(I)(height);
+            if (popup.@com.alkacon.geranium.client.ui.Popup::isShowing()) {
+                popup.@com.alkacon.geranium.client.ui.Popup::center()();
+            }
+        };
+        $wnd[@com.alkacon.geranium.client.ui.FrameDialog::WIDTH_FUNCTION] = function(
+                width) {
+            popup.@com.alkacon.geranium.client.ui.Popup::setWidth(I)(width);
+            if (popup.@com.alkacon.geranium.client.ui.Popup::isShowing()) {
+                popup.@com.alkacon.geranium.client.ui.Popup::center()();
+            }
+        };
+        $wnd[@com.alkacon.geranium.client.ui.FrameDialog::TITLE_FUNCTION] = function(
+                title) {
+            popup.@com.alkacon.geranium.client.ui.Popup::setCaption(Ljava/lang/String;)(title);
+        };
+        $wnd[@com.alkacon.geranium.client.ui.FrameDialog::ENABLE_CLOSE_FUNCTION] = function(
+                title) {
+            popup.@com.alkacon.geranium.client.ui.Popup::addDialogClose(Lcom/google/gwt/user/client/Command;)(null);
+        };
+    }-*/;
 
     /**
      * Adds a new button to the button bar.<p>
@@ -410,17 +408,17 @@ public class FrameDialog {
      * Enables the dialog close button on the parent frame popup.<p>
      */
     private native void enableParentDialogClose() /*-{
-                                                  $wnd.parent[@com.alkacon.geranium.client.ui.FrameDialog::ENABLE_CLOSE_FUNCTION]
-                                                  ();
-                                                  }-*/;
+        $wnd.parent[@com.alkacon.geranium.client.ui.FrameDialog::ENABLE_CLOSE_FUNCTION]
+                ();
+    }-*/;
 
     /**
      * Hides the parent dialog.<p>
      */
     private native void hideParent() /*-{
-                                     $wnd.parent[@com.alkacon.geranium.client.ui.FrameDialog::CLOSE_FUNCTION]
-                                     ();
-                                     }-*/;
+        $wnd.parent[@com.alkacon.geranium.client.ui.FrameDialog::CLOSE_FUNCTION]
+                ();
+    }-*/;
 
     /**
      * Initializes the button panel within frame mode.<p>
@@ -440,9 +438,9 @@ public class FrameDialog {
      * @param height the height to set
      */
     private native void setParentHeight(int height) /*-{
-                                                    $wnd.parent[@com.alkacon.geranium.client.ui.FrameDialog::HEIGHT_FUNCTION]
-                                                    (height);
-                                                    }-*/;
+        $wnd.parent[@com.alkacon.geranium.client.ui.FrameDialog::HEIGHT_FUNCTION]
+                (height);
+    }-*/;
 
     /**
      * Sets the title of the parent dialog.<p>
@@ -450,9 +448,9 @@ public class FrameDialog {
      * @param title the title
      */
     private native void setParentTitle(String title) /*-{
-                                                     $wnd.parent[@com.alkacon.geranium.client.ui.FrameDialog::TITLE_FUNCTION]
-                                                     (title);
-                                                     }-*/;
+        $wnd.parent[@com.alkacon.geranium.client.ui.FrameDialog::TITLE_FUNCTION]
+                (title);
+    }-*/;
 
     /**
      * Sets the parent dialog width.<p>
@@ -460,7 +458,7 @@ public class FrameDialog {
      * @param width the width to set
      */
     private native void setParentWidth(int width) /*-{
-                                                  $wnd.parent[@com.alkacon.geranium.client.ui.FrameDialog::WIDTH_FUNCTION]
-                                                  (width);
-                                                  }-*/;
+        $wnd.parent[@com.alkacon.geranium.client.ui.FrameDialog::WIDTH_FUNCTION]
+                (width);
+    }-*/;
 }

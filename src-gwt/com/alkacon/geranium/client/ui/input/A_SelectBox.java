@@ -69,9 +69,6 @@ import com.google.gwt.user.client.ui.Widget;
  * Abstract superclass for select box widgets.<p>
  * 
  * @param <OPTION> the widget type of the select options 
- * 
- * @since 8.0.0
- * 
  */
 public abstract class A_SelectBox<OPTION extends A_SelectCell> extends Composite
 implements I_FormWidget, HasValueChangeHandlers<String>, I_Truncable {

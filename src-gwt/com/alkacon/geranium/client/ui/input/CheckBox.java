@@ -50,8 +50,6 @@ import com.google.gwt.user.client.ui.HasHorizontalAlignment;
  * 
  * It can be checked/unchecked and enabled/disabled, which means 4 combinations in total.
  * So you need to supply 4 images, one for each of the combinations.<p>
- * 
- * @since 8.0.0
  */
 public class CheckBox extends Composite
 implements HasClickHandlers, I_FormWidget, I_HasInit, HasHorizontalAlignment, HasValueChangeHandlers<Boolean> {

@@ -36,9 +36,6 @@ import com.google.gwt.user.client.ui.RootPanel;
 
 /**
  * An abstract class for widgets which represent options for select boxes.<p>
- * 
- * @since 8.0.0
- * 
  */
 public abstract class A_SelectCell extends Composite {
 

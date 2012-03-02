@@ -28,8 +28,6 @@ import com.google.gwt.event.dom.client.HasClickHandlers;
 
 /**
  * Interface for all tool-bar buttons.<p>
- * 
- * @since 8.0.0
  */
 public interface I_ToolbarButton extends HasClickHandlers {
 

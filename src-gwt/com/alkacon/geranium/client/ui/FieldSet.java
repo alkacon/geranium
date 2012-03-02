@@ -51,8 +51,6 @@ import com.google.gwt.user.client.ui.Widget;
 
 /**
  * A panel that behaves like a HTML fieldset.<p>
- * 
- * @since 8.0.0
  */
 public class FieldSet extends Composite implements HasOpenHandlers<FieldSet>, HasCloseHandlers<FieldSet> {
 

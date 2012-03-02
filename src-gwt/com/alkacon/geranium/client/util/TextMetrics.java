@@ -52,8 +52,6 @@ import com.google.gwt.user.client.ui.RootPanel;
  * </pre>
  * 
  * Based on <a href="http://code.google.com/p/my-gwt/source/browse/trunk/user/src/net/mygwt/ui/client/util/TextMetrics.java">my-gwt TextMetrics</a>.<p> 
- * 
- * @since 8.0.0
  */
 public final class TextMetrics {
 

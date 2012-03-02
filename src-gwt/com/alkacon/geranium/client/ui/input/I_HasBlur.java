@@ -26,8 +26,6 @@ package com.alkacon.geranium.client.ui.input;
 
 /**
  * This is an interface for widgets which have a blur() method.<p>
- * 
- * @since 8.0.0
  */
 public interface I_HasBlur {
 

@@ -26,8 +26,6 @@ package com.alkacon.geranium.client.util;
 
 /**
  * Interface for objects which have an  integer-valued size, e.g. custom containers.<p>
- * 
- * @since 8.0.0
  */
 public interface I_CmsHasSize {
 

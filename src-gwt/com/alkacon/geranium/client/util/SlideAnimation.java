@@ -34,8 +34,6 @@ import com.google.gwt.user.client.Command;
 /**
  * Slide animation. Sliding the element into view or sliding it out.<p>
  * Uses the in-line CSS display property, clear after completion if appropriate.<p>
- * 
- * @since 8.0.0
  */
 public class SlideAnimation extends A_Animation {
 

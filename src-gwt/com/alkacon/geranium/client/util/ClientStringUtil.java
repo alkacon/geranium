@@ -35,9 +35,6 @@ import com.google.gwt.core.client.JavaScriptObject;
 
 /**
  * Additional string related helper methods.<p>
- * 
- * @since 8.0.0
- * 
  */
 public final class ClientStringUtil {
 
@@ -109,12 +106,12 @@ public final class ClientStringUtil {
      * @return the parsed number
      */
     public static native double parseFloat(String str) /*-{
-                                                       var ret = parseFloat(str, 10);
-                                                       if (isNaN(ret)) {
-                                                       return 0;
-                                                       }
-                                                       return ret;
-                                                       }-*/;
+        var ret = parseFloat(str, 10);
+        if (isNaN(ret)) {
+            return 0;
+        }
+        return ret;
+    }-*/;
 
     /**
      * The parseInt() function parses a string and returns an integer.<p>
@@ -127,12 +124,12 @@ public final class ClientStringUtil {
      * @return the parsed number
      */
     public static native int parseInt(String str) /*-{
-                                                  var ret = parseInt(str, 10);
-                                                  if (isNaN(ret)) {
-                                                  return 0;
-                                                  }
-                                                  return ret;
-                                                  }-*/;
+        var ret = parseInt(str, 10);
+        if (isNaN(ret)) {
+            return 0;
+        }
+        return ret;
+    }-*/;
 
     /**
      * Pushes a String into a javascript array.<p>
@@ -141,8 +138,8 @@ public final class ClientStringUtil {
      * @param s the String to push into the array
      */
     public static native void pushArray(JavaScriptObject array, String s) /*-{
-                                                                          array.push(s);
-                                                                          }-*/;
+        array.push(s);
+    }-*/;
 
     /**
      * Shortens the string to the given maximum length.<p>

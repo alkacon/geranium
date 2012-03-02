@@ -34,8 +34,6 @@ import com.google.gwt.user.client.ui.Frame;
  * This class represents a popup which displays an IFrame.<p>
  * 
  * It also exports a Javascript function to close the popup when given the id of the popup.<p>
- * 
- * @since 8.0.0
  */
 public class FramePopup extends Popup {
 
@@ -143,18 +141,18 @@ public class FramePopup extends Popup {
      * Exports a Javascript function 'cmsCloseDialog', which, when passed the id of a CmsFramePopup as a parameter, will close that dialog.<p>
      */
     protected native void exportCloseFunction() /*-{
-                                                var w = $wnd;
-                                                w.CmsFramePopup_instances = w.CmsFramePopup_instances || {};
-                                                // register the current instance under its id 
-                                                w.CmsFramePopup_instances[this.@com.alkacon.geranium.client.ui.input.FramePopup::m_id] = this;
-                                                if (!w.cmsCloseDialog) {
-                                                w.cmsCloseDialog = function(arg) {
-                                                var instance = w.CmsFramePopup_instances[arg];
-                                                instance.@com.alkacon.geranium.client.ui.input.FramePopup::hideDelayed()();
-                                                // remove current instance 
-                                                delete w.CmsFramePopup_instances[this.@com.alkacon.geranium.client.ui.input.FramePopup::m_id];
-                                                } // cmsCloseDialog 
-                                                } // if
-                                                }-*/;
+        var w = $wnd;
+        w.CmsFramePopup_instances = w.CmsFramePopup_instances || {};
+        // register the current instance under its id 
+        w.CmsFramePopup_instances[this.@com.alkacon.geranium.client.ui.input.FramePopup::m_id] = this;
+        if (!w.cmsCloseDialog) {
+            w.cmsCloseDialog = function(arg) {
+                var instance = w.CmsFramePopup_instances[arg];
+                instance.@com.alkacon.geranium.client.ui.input.FramePopup::hideDelayed()();
+                // remove current instance 
+                delete w.CmsFramePopup_instances[this.@com.alkacon.geranium.client.ui.input.FramePopup::m_id];
+            } // cmsCloseDialog 
+        } // if
+    }-*/;
 
 }

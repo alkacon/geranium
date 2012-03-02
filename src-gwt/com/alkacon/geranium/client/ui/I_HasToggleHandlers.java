@@ -29,9 +29,6 @@ import com.google.gwt.event.shared.HasHandlers;
 
 /**
  * Interface to indicate that the implementing widget may have toggle event handlers.<p>
- * 
- * @since 8.0.0
- * 
  */
 public interface I_HasToggleHandlers extends HasHandlers {
 

@@ -25,11 +25,7 @@
 package com.alkacon.geranium.client;
 
 /**
- * The marker interface for classes which should be initialized via {@link I_CmsClassInitializer}.
- * 
- * @since 8.0.0
- * 
- * @see org.opencms.gwt.rebind.CmsClassInitGenerator
+ * The marker interface for classes which should be initialized via a class initializer on compile.
  */
 public interface I_HasInit {
 

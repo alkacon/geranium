@@ -33,8 +33,6 @@ import com.google.gwt.event.dom.client.ClickHandler;
 
 /**
  * Provides a confirmation dialog with ok and cancel button.<p>
- * 
- * @since 8.0.0
  */
 public class ConfirmDialog extends AlertDialog {
 

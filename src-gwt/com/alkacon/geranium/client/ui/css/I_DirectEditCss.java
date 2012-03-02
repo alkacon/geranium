@@ -30,8 +30,6 @@ import com.google.gwt.resources.client.CssResource.Shared;
 
 /**
  * CSS resource interface for the classic Direct Edit Buttons.<p>
- * 
- * @since 8.0.0
  */
 @Shared
 public interface I_DirectEditCss extends I_CmsToolbarButtonCss {

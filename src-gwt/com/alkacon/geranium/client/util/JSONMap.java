@@ -28,8 +28,6 @@ import com.google.gwt.core.client.JavaScriptObject;
 
 /**
  * Class to create native JSON maps.<p>
- * 
- * @since 8.0.0
  */
 public final class JSONMap extends JavaScriptObject {
 
@@ -47,8 +45,8 @@ public final class JSONMap extends JavaScriptObject {
      * @return the JSON map
      */
     public static native JSONMap createJSONMap() /*-{
-                                                 return {};
-                                                 }-*/;
+        return {};
+    }-*/;
 
     /**
      * Returns if the given key is present in the map.<p>
@@ -58,13 +56,13 @@ public final class JSONMap extends JavaScriptObject {
      * @return <code>true</code> if the map contains the key
      */
     public native boolean containsKey(String key) /*-{
-                                                  for (var _key in this){
-                                                  if (_key==key){
-                                                  return true;
-                                                  }
-                                                  }
-                                                  return false;
-                                                  }-*/;
+        for ( var _key in this) {
+            if (_key == key) {
+                return true;
+            }
+        }
+        return false;
+    }-*/;
 
     /**
      * Returns the value to the given key.<p>
@@ -74,8 +72,8 @@ public final class JSONMap extends JavaScriptObject {
      * @return the value
      */
     public native boolean getBoolean(String key) /*-{
-                                                 return this[key];
-                                                 }-*/;
+        return this[key];
+    }-*/;
 
     /**
      * Returns the value to the given key.<p>
@@ -85,8 +83,8 @@ public final class JSONMap extends JavaScriptObject {
      * @return the value
      */
     public native boolean[] getBooleanArray(String key) /*-{
-                                                        return this[key];
-                                                        }-*/;
+        return this[key];
+    }-*/;
 
     /**
      * Returns the value to the given key.<p>
@@ -96,8 +94,8 @@ public final class JSONMap extends JavaScriptObject {
      * @return the value
      */
     public native double getDouble(String key) /*-{
-                                               return this[key];
-                                               }-*/;
+        return this[key];
+    }-*/;
 
     /**
      * Returns the value to the given key.<p>
@@ -107,8 +105,8 @@ public final class JSONMap extends JavaScriptObject {
      * @return the value
      */
     public native double[] getDoubleArray(String key) /*-{
-                                                      return this[key];
-                                                      }-*/;
+        return this[key];
+    }-*/;
 
     /**
      * Returns the value to the given key.<p>
@@ -118,8 +116,8 @@ public final class JSONMap extends JavaScriptObject {
      * @return the value
      */
     public native int getInt(String key) /*-{
-                                         return this[key];
-                                         }-*/;
+        return this[key];
+    }-*/;
 
     /**
      * Returns the value to the given key.<p>
@@ -129,8 +127,8 @@ public final class JSONMap extends JavaScriptObject {
      * @return the value
      */
     public native int[] getIntArray(String key) /*-{
-                                                return this[key];
-                                                }-*/;
+        return this[key];
+    }-*/;
 
     /**
      * Returns the value to the given key.<p>
@@ -140,8 +138,8 @@ public final class JSONMap extends JavaScriptObject {
      * @return the value
      */
     public native JavaScriptObject getJavaScriptObject(String key) /*-{
-                                                                   return this[key];
-                                                                   }-*/;
+        return this[key];
+    }-*/;
 
     /**
      * Returns the value to the given key.<p>
@@ -151,8 +149,8 @@ public final class JSONMap extends JavaScriptObject {
      * @return the value
      */
     public native JavaScriptObject[] getJavaScriptObjectArray(String key) /*-{
-                                                                          return this[key];
-                                                                          }-*/;
+        return this[key];
+    }-*/;
 
     /**
      * Returns the value to the given key.<p>
@@ -162,8 +160,8 @@ public final class JSONMap extends JavaScriptObject {
      * @return the value
      */
     public native String getString(String key) /*-{
-                                               return this[key];
-                                               }-*/;
+        return this[key];
+    }-*/;
 
     /**
      * Returns the value to the given key.<p>
@@ -173,8 +171,8 @@ public final class JSONMap extends JavaScriptObject {
      * @return the value
      */
     public native String[] getStringArray(String key) /*-{
-                                                      return this[key];
-                                                      }-*/;
+        return this[key];
+    }-*/;
 
     /**
      * Puts the value into the map.<p>
@@ -183,8 +181,8 @@ public final class JSONMap extends JavaScriptObject {
      * @param value the value
      */
     public native void put(String key, boolean value) /*-{
-                                                      this[key]=value;
-                                                      }-*/;
+        this[key] = value;
+    }-*/;
 
     /**
      * Puts the value into the map.<p>
@@ -193,8 +191,8 @@ public final class JSONMap extends JavaScriptObject {
      * @param value the value
      */
     public native void put(String key, boolean[] value) /*-{
-                                                        this[key]=value;
-                                                        }-*/;
+        this[key] = value;
+    }-*/;
 
     /**
      * Puts the value into the map.<p>
@@ -203,8 +201,8 @@ public final class JSONMap extends JavaScriptObject {
      * @param value the value
      */
     public native void put(String key, double value) /*-{
-                                                     this[key]=value;
-                                                     }-*/;
+        this[key] = value;
+    }-*/;
 
     /**
      * Puts the value into the map.<p>
@@ -213,8 +211,8 @@ public final class JSONMap extends JavaScriptObject {
      * @param value the value
      */
     public native void put(String key, double[] value) /*-{
-                                                       this[key]=value;
-                                                       }-*/;
+        this[key] = value;
+    }-*/;
 
     /**
      * Puts the value into the map.<p>
@@ -223,8 +221,8 @@ public final class JSONMap extends JavaScriptObject {
      * @param value the value
      */
     public native void put(String key, int value) /*-{
-                                                  this[key]=value;
-                                                  }-*/;
+        this[key] = value;
+    }-*/;
 
     /**
      * Puts the value into the map.<p>
@@ -233,8 +231,8 @@ public final class JSONMap extends JavaScriptObject {
      * @param value the value
      */
     public native void put(String key, int[] value) /*-{
-                                                    this[key]=value;
-                                                    }-*/;
+        this[key] = value;
+    }-*/;
 
     /**
      * Puts the value into the map.<p>
@@ -243,8 +241,8 @@ public final class JSONMap extends JavaScriptObject {
      * @param value the value
      */
     public native void put(String key, JavaScriptObject value) /*-{
-                                                               this[key]=value;
-                                                               }-*/;
+        this[key] = value;
+    }-*/;
 
     /**
      * Puts the value into the map.<p>
@@ -253,8 +251,8 @@ public final class JSONMap extends JavaScriptObject {
      * @param value the value
      */
     public native void put(String key, JavaScriptObject[] value) /*-{
-                                                                 this[key]=value;
-                                                                 }-*/;
+        this[key] = value;
+    }-*/;
 
     /**
      * Puts the value into the map.<p>
@@ -263,8 +261,8 @@ public final class JSONMap extends JavaScriptObject {
      * @param value the value
      */
     public native void put(String key, String value) /*-{
-                                                     this[key]=value;
-                                                     }-*/;
+        this[key] = value;
+    }-*/;
 
     /**
      * Puts the value into the map.<p>
@@ -273,6 +271,6 @@ public final class JSONMap extends JavaScriptObject {
      * @param value the value
      */
     public native void put(String key, String[] value) /*-{
-                                                       this[key]=value;
-                                                       }-*/;
+        this[key] = value;
+    }-*/;
 }

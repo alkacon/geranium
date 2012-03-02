@@ -44,8 +44,6 @@ import com.google.gwt.user.client.ui.Widget;
  * set to the width of the float panel. If the widget starts out as hidden,
  * the float panel width can not be measured, so you have to call the updateLayout
  * method  manually when the widget becomes visible. 
- * 
- * @since 8.0.0
  */
 public class FloatDecoratedPanel extends Composite implements I_Truncable {
 

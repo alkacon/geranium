@@ -43,8 +43,6 @@ import com.google.gwt.user.client.ui.RootPanel;
 
 /**
  * A tool-tip handler. Allowing to show any HTML as a tool-tip on mouse over.<p>
- * 
- * @since 8.0.0
  */
 public class ToolTipHandler implements MouseOverHandler, MouseMoveHandler, MouseOutHandler {
 

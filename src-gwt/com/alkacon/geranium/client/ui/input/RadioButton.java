@@ -42,9 +42,6 @@ import com.google.gwt.user.client.ui.HasHorizontalAlignment;
  * In most cases, you will need to set the group of a radio button, which is a Java object, 
  * not just a string as in HTML radio buttons. Clicking on a radio button in a group will result
  * in the radio button being selected, and none of the other buttons in the group being selected.<p>
- * 
- * @since 8.0.0
- * 
  */
 public class RadioButton extends Composite implements HasHorizontalAlignment, HasClickHandlers {
 

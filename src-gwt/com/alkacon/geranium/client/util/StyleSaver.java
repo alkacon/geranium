@@ -32,8 +32,6 @@ import com.google.gwt.dom.client.Style;
 
 /**
  * This is a utility class for saving and restoring CSS style properties of a DOM element.<p>
- * 
- * @since 8.0.0
  */
 public class StyleSaver {
 

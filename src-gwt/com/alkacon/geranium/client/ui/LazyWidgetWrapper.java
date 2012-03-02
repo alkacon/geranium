@@ -33,8 +33,6 @@ import com.google.gwt.user.client.ui.Widget;
  * <code>widget()</code> method is called.<p>
  * 
  * @param <W> the type of the widget to wrap 
- * 
- * @since 8.0.0
  */
 public class LazyWidgetWrapper<W extends Widget> extends Composite {
 

@@ -37,8 +37,6 @@ import com.google.gwt.resources.client.ImageResource.RepeatStyle;
 
 /**
  * Resource bundle to access CSS and image resources.
- * 
- * @since 8.0.0
  */
 public interface I_ImageBundle extends ClientBundle {
 

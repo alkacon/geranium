@@ -43,9 +43,6 @@ import com.google.gwt.user.client.ui.Panel;
 
 /**
  * A form widget consisting of a group of checkboxes.<p>
- * 
- * @since 8.0.0
- *  
  */
 public class MultiCheckBox extends Composite implements I_FormWidget, I_HasInit {
 

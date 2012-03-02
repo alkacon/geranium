@@ -50,8 +50,6 @@ import com.google.gwt.user.client.ui.Widget;
  * A basic panel which is like GWT's FlowPanel, except it allows you to choose the HTML tag
  * to use.<p>
  * Implements {@link com.google.gwt.event.dom.client.HasAllMouseHandlers}.<p>
- * 
- * @since 8.0.0
  */
 public class FlowPanel extends ComplexPanel implements HasAllMouseHandlers {
 

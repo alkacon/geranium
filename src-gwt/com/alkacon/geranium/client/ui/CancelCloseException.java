@@ -26,8 +26,6 @@ package com.alkacon.geranium.client.ui;
 
 /**
  * An exception class used to signal that the closing of a dialog should be cancelled.<p>
- * 
- * @since 8.0.0
  */
 public class CancelCloseException extends RuntimeException {
 

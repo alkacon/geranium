@@ -55,9 +55,6 @@ import com.google.gwt.user.client.ui.Widget;
  * As layout options two height for the tabbar are provided: 32px("standard") and 25px("small").
  * 
  * @param <E> the tab widget type
- * 
- * @since 8.0.0
- * 
  */
 public class TabbedPanel<E extends Widget> extends Composite {
 

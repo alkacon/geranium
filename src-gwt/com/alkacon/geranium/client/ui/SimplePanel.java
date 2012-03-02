@@ -30,8 +30,6 @@ import com.google.gwt.user.client.ui.Widget;
 
 /**
  * Simpler to use {@link com.google.gwt.user.client.ui.HTMLPanel}.<p>
- * 
- * @since 8.0.0
  */
 public class SimplePanel extends ComplexPanel {
 

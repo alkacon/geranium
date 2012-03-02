@@ -35,8 +35,6 @@ import com.google.gwt.user.client.ui.FlowPanel;
 
 /**
  * A {@link com.google.gwt.user.client.ui.FlowPanel} implementation toggles the {@link com.alkacon.geranium.client.ui.css.I_LayoutBundle.I_CmsStateCss#cmsHovering()} CSS class on mouse over.<p>
- * 
- * @since 8.0.0
  */
 public class HoverPanel extends FlowPanel implements HasMouseOutHandlers, HasMouseOverHandlers {
 

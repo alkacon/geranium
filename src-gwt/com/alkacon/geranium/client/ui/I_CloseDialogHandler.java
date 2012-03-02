@@ -26,8 +26,6 @@ package com.alkacon.geranium.client.ui;
 
 /**
  * Handles the clicks buttons of the dialog.<p>
- * 
- * @since 8.0.0
  */
 public interface I_CloseDialogHandler {
 

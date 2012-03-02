@@ -31,8 +31,6 @@ import com.google.gwt.user.client.Command;
 /**
  * Move animation. Moving the given element from it's start to it's end position
  * and executing the given call-back on complete.<p>
- * 
- * @since 8.0.0
  */
 public class MoveAnimation extends A_Animation {
 

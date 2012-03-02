@@ -64,8 +64,6 @@ import com.google.gwt.user.client.ui.Widget;
 
 /**
  * Select area widget. Allows the user to select an area inside the widget.<p>
- * 
- * @since 8.0.0
  */
 public class AreaSelectPanel extends Composite
 implements HasWidgets, IndexedPanel, HasValueChangeHandlers<PositionBean>, HasMouseDownHandlers, HasMouseUpHandlers,

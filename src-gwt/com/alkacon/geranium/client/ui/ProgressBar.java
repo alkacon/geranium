@@ -31,8 +31,6 @@ import com.google.gwt.user.client.ui.HTML;
 
 /**
  * Provides a simple progress bar.<p>
- * 
- * @since 8.0.0
  */
 public class ProgressBar extends FlowPanel {
 

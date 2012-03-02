@@ -29,8 +29,6 @@ import com.alkacon.geranium.client.ui.Notification.Type;
 
 /**
  * Notification widget, most of the work is done on the container element.<p>
- * 
- * @since 8.0.0
  */
 public interface I_NotificationWidget {
 

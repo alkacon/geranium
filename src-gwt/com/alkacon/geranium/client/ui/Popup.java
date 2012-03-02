@@ -66,8 +66,6 @@ import com.google.gwt.user.client.ui.WidgetCollection;
 
 /**
  * Provides a pop up dialog base.
- * 
- * @since 8.0.0
  */
 public class Popup extends PopupPanel implements I_AutoHider {
 

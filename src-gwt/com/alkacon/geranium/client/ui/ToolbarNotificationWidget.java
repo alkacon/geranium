@@ -38,8 +38,6 @@ import com.google.gwt.user.client.ui.Widget;
 
 /**
  * The toolbar notification widget.<p>
- * 
- * @since 8.0.0
  */
 public class ToolbarNotificationWidget extends A_NotificationWidget {
 

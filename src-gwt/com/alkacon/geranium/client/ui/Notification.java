@@ -29,8 +29,6 @@ import com.google.gwt.core.client.Scheduler.ScheduledCommand;
 
 /**
  * User feedback provider.<p>
- * 
- * @since 8.0.0
  */
 public final class Notification {
 

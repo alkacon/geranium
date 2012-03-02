@@ -30,8 +30,6 @@ import com.google.gwt.dom.client.Element;
 
 /**
  * Interface defining all methods needed for a drag and drop target. These will mostly be called by the drag and drop handler.<p>
- * 
- * @since 8.0.0
  */
 public interface I_DropTarget {
 

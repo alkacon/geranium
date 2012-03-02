@@ -47,8 +47,6 @@ import com.google.gwt.user.client.Timer;
  *   });
  * </pre>
  * 
- * @since 8.0.0
- * 
  * @see <a href="http://ui-programming.blogspot.com/2010/02/gwt-how-to-implement-delayedtask-in.html">Original implementation</a>
  */
 public final class BurstEventManager {
