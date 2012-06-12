@@ -59,7 +59,7 @@ import com.google.gwt.user.client.ui.Widget;
 public class TabbedPanel<E extends Widget> extends Composite {
 
     /** Enumeration with layout keys. */
-    public enum CmsTabbedPanelStyle {
+    public enum TabbedPanelStyle {
 
         /** Button style. */
         buttonTabs(25, I_LayoutBundle.INSTANCE.tabbedPanelCss().buttonTabs(),
@@ -69,7 +69,7 @@ public class TabbedPanel<E extends Widget> extends Composite {
         classicTabs(25, I_LayoutBundle.INSTANCE.tabbedPanelCss().classicTabs(), null);
 
         /** The default tabbar height. */
-        public static final CmsTabbedPanelStyle DEFAULT = buttonTabs;
+        public static final TabbedPanelStyle DEFAULT = buttonTabs;
 
         /** Property name. */
         private int m_barHeight;
@@ -87,7 +87,7 @@ public class TabbedPanel<E extends Widget> extends Composite {
          * @param styleClass the tab style class
          * @param tabColorClass the tab color
          */
-        private CmsTabbedPanelStyle(int barHeight, String styleClass, String tabColorClass) {
+        private TabbedPanelStyle(int barHeight, String styleClass, String tabColorClass) {
 
             m_barHeight = barHeight;
             m_styleClass = styleClass;
@@ -129,7 +129,7 @@ public class TabbedPanel<E extends Widget> extends Composite {
     private Map<Integer, String> m_disabledTabIndexes = new HashMap<Integer, String>();
 
     /** The tab panel style. */
-    private CmsTabbedPanelStyle m_panelStyle;
+    private TabbedPanelStyle m_panelStyle;
 
     /** The TabLayoutPanel widget. */
     private TabLayoutPanel m_tabPanel;
@@ -142,7 +142,7 @@ public class TabbedPanel<E extends Widget> extends Composite {
      */
     public TabbedPanel() {
 
-        this(CmsTabbedPanelStyle.DEFAULT);
+        this(TabbedPanelStyle.DEFAULT);
     }
 
     /**
@@ -150,7 +150,7 @@ public class TabbedPanel<E extends Widget> extends Composite {
      * 
      * @param tabbedPanelStyle the pre-defined height of the tabbar, can be "small" or "standard"      
      */
-    public TabbedPanel(CmsTabbedPanelStyle tabbedPanelStyle) {
+    public TabbedPanel(TabbedPanelStyle tabbedPanelStyle) {
 
         m_tabPanel = new TabLayoutPanel(tabbedPanelStyle.getBarHeight(), Unit.PX);
         m_panelStyle = tabbedPanelStyle;
@@ -190,6 +190,38 @@ public class TabbedPanel<E extends Widget> extends Composite {
                 setOverflowVisibleToContent();
             }
         });
+    }
+
+    /**
+     * Returns the tab widget.<p>
+     * This will not be the tab content but the tab itself.<p>
+     * 
+     * @param index the tab index
+     * 
+     * @return the tab widget
+     */
+    public Widget getTabWidget(int index) {
+
+        return m_tabPanel.getTabWidget(index);
+    }
+
+    /**
+     * Returns the index of the tab to the given child element.<p>
+     * 
+     * @param child the tab child
+     * 
+     * @return the tab index
+     */
+    public int getTabIndex(Element child) {
+
+        int index = 0;
+        for (Widget tab : m_tabPanel) {
+            if (tab.getElement().isOrHasChild(child)) {
+                return index;
+            }
+            index++;
+        }
+        return -1;
     }
 
     /**
@@ -283,7 +315,7 @@ public class TabbedPanel<E extends Widget> extends Composite {
         Element tabElement = getTabElement(tabIndex);
         if (tabElement != null) {
             tabElement.addClassName(I_LayoutBundle.INSTANCE.tabbedPanelCss().tabLeftMargin());
-            if (!m_panelStyle.equals(CmsTabbedPanelStyle.classicTabs)) {
+            if (!m_panelStyle.equals(TabbedPanelStyle.classicTabs)) {
                 tabElement.addClassName(I_LayoutBundle.INSTANCE.generalCss().buttonCornerAll());
                 tabElement.addClassName(I_LayoutBundle.INSTANCE.tabbedPanelCss().borderAll());
             }
