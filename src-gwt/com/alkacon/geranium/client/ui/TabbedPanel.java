@@ -168,7 +168,7 @@ public class TabbedPanel<E extends Widget> extends Composite {
             tabBarDivs.get(0).getParentElement().setClassName(
                 I_LayoutBundle.INSTANCE.tabbedPanelCss().cmsTabLayoutPanelTabBar()
                     + " "
-                    + I_LayoutBundle.INSTANCE.generalCss().cornerAll());
+                    + I_LayoutBundle.INSTANCE.generalCss().cornerTop());
             if (m_panelStyle.getTabColorClass() != null) {
                 tabBarDivs.get(0).getParentElement().addClassName(m_panelStyle.getTabColorClass());
             }
