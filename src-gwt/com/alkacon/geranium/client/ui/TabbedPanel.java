@@ -43,6 +43,9 @@ import com.google.gwt.event.logical.shared.BeforeSelectionHandler;
 import com.google.gwt.event.logical.shared.SelectionHandler;
 import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.DeckLayoutPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.LayoutPanel;
 import com.google.gwt.user.client.ui.TabLayoutPanel;
 import com.google.gwt.user.client.ui.Widget;
 
@@ -68,7 +71,7 @@ public class TabbedPanel<E extends Widget> extends Composite {
         /** Classic style. */
         classicTabs(25, I_LayoutBundle.INSTANCE.tabbedPanelCss().classicTabs(), null);
 
-        /** The default tabbar height. */
+        /** The default tab bar height. */
         public static final TabbedPanelStyle DEFAULT = buttonTabs;
 
         /** Property name. */
@@ -125,14 +128,63 @@ public class TabbedPanel<E extends Widget> extends Composite {
         }
     }
 
+    /**
+     * Extending the TabLayoutPanel class to allow height adjustments to the tab bar.<p>
+     */
+    protected class TabPanel extends TabLayoutPanel {
+
+        /** The tab content panel. */
+        private DeckLayoutPanel m_contentPanel;
+
+        /** The tab bar. */
+        private FlowPanel m_tabBar;
+
+        /** 
+         * Constructor.<p>
+         * 
+         * @param barHeight the tab bar height
+         * @param barUnit the height unit
+         */
+        public TabPanel(double barHeight, Unit barUnit) {
+
+            super(barHeight, barUnit);
+            LayoutPanel tabLayout = (LayoutPanel)getWidget();
+            // Find the tab bar, which is the first flow panel in the LayoutPanel
+            for (int i = 0; i < tabLayout.getWidgetCount(); ++i) {
+                Widget widget = tabLayout.getWidget(i);
+                if (widget instanceof FlowPanel) {
+                    m_tabBar = (FlowPanel)widget;
+                    break; // tab bar found
+                }
+            }
+
+            for (int i = 0; i < tabLayout.getWidgetCount(); ++i) {
+                Widget widget = tabLayout.getWidget(i);
+                if (widget instanceof DeckLayoutPanel) {
+                    m_contentPanel = (DeckLayoutPanel)widget;
+                    break; // tab bar found
+                }
+            }
+        }
+
+        /**
+         * Checks the tab bar for necessary height adjustments.<p>
+         */
+        protected void checkTabOverflow() {
+
+            int height = m_tabBar.getOffsetHeight();
+            m_contentPanel.getElement().getParentElement().getStyle().setTop(height, Unit.PX);
+        }
+    }
+
+    /** The TabLayoutPanel widget. */
+    TabPanel m_tabPanel;
+
     /** Stores the indexes and the title of disabled tabs. */
     private Map<Integer, String> m_disabledTabIndexes = new HashMap<Integer, String>();
 
     /** The tab panel style. */
     private TabbedPanelStyle m_panelStyle;
-
-    /** The TabLayoutPanel widget. */
-    private TabLayoutPanel m_tabPanel;
 
     /** A map from ids to tabs. */
     private Map<String, E> m_tabsById = new HashMap<String, E>();
@@ -152,7 +204,7 @@ public class TabbedPanel<E extends Widget> extends Composite {
      */
     public TabbedPanel(TabbedPanelStyle tabbedPanelStyle) {
 
-        m_tabPanel = new TabLayoutPanel(tabbedPanelStyle.getBarHeight(), Unit.PX);
+        m_tabPanel = new TabPanel(tabbedPanelStyle.getBarHeight(), Unit.PX);
         m_panelStyle = tabbedPanelStyle;
 
         // All composites must call initWidget() in their constructors.
@@ -188,40 +240,15 @@ public class TabbedPanel<E extends Widget> extends Composite {
             public void onAttachOrDetach(AttachEvent event) {
 
                 setOverflowVisibleToContent();
+                Scheduler.get().scheduleDeferred(new ScheduledCommand() {
+
+                    public void execute() {
+
+                        m_tabPanel.checkTabOverflow();
+                    }
+                });
             }
         });
-    }
-
-    /**
-     * Returns the tab widget.<p>
-     * This will not be the tab content but the tab itself.<p>
-     * 
-     * @param index the tab index
-     * 
-     * @return the tab widget
-     */
-    public Widget getTabWidget(int index) {
-
-        return m_tabPanel.getTabWidget(index);
-    }
-
-    /**
-     * Returns the index of the tab to the given child element.<p>
-     * 
-     * @param child the tab child
-     * 
-     * @return the tab index
-     */
-    public int getTabIndex(Element child) {
-
-        int index = 0;
-        for (Widget tab : m_tabPanel) {
-            if (tab.getElement().isOrHasChild(child)) {
-                return index;
-            }
-            index++;
-        }
-        return -1;
     }
 
     /**
@@ -259,6 +286,7 @@ public class TabbedPanel<E extends Widget> extends Composite {
                 e.addClassName(I_LayoutBundle.INSTANCE.tabbedPanelCss().cornerRight());
             }
         }
+        m_tabPanel.checkTabOverflow();
     }
 
     /**
@@ -285,6 +313,7 @@ public class TabbedPanel<E extends Widget> extends Composite {
 
         add(tabContent, tabName);
         m_tabsById.put(tabId, tabContent);
+        m_tabPanel.checkTabOverflow();
     }
 
     /**
@@ -320,6 +349,7 @@ public class TabbedPanel<E extends Widget> extends Composite {
                 tabElement.addClassName(I_LayoutBundle.INSTANCE.tabbedPanelCss().borderAll());
             }
         }
+        m_tabPanel.checkTabOverflow();
     }
 
     /**
@@ -397,6 +427,25 @@ public class TabbedPanel<E extends Widget> extends Composite {
     }
 
     /**
+     * Returns the index of the tab to the given child element.<p>
+     * 
+     * @param child the tab child
+     * 
+     * @return the tab index
+     */
+    public int getTabIndex(Element child) {
+
+        int index = 0;
+        for (Widget tab : m_tabPanel) {
+            if (tab.getElement().isOrHasChild(child)) {
+                return index;
+            }
+            index++;
+        }
+        return -1;
+    }
+
+    /**
      * Returns the tab text for a given tab.<p>
      * 
      * @param pos the index of the tab 
@@ -406,6 +455,19 @@ public class TabbedPanel<E extends Widget> extends Composite {
     public String getTabText(int pos) {
 
         return m_tabPanel.getTabWidget(pos).getElement().getInnerText();
+    }
+
+    /**
+     * Returns the tab widget.<p>
+     * This will not be the tab content but the tab itself.<p>
+     * 
+     * @param index the tab index
+     * 
+     * @return the tab widget
+     */
+    public Widget getTabWidget(int index) {
+
+        return m_tabPanel.getTabWidget(index);
     }
 
     /**
@@ -434,6 +496,7 @@ public class TabbedPanel<E extends Widget> extends Composite {
     public void insert(E tabContent, String tabName, int beforeIndex) {
 
         m_tabPanel.insert(tabContent, tabName, beforeIndex);
+        m_tabPanel.checkTabOverflow();
     }
 
     /**
