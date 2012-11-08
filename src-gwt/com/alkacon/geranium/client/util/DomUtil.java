@@ -1399,20 +1399,13 @@ public final class DomUtil {
      * 
      * @param element the child element
      * @param parent the parent element
-     * @param scrollParent the scroll parent element
      * @param currentIndex the current index position of the element, use -1 if element is not attached to the parent yet 
      * @param x the client x position, use <code>-1</code> to ignore x position 
      * @param y the client y position, use <code>-1</code> to ignore y position
      * 
      * @return the new index position
      */
-    public static int positionElementInside(
-        Element element,
-        Element parent,
-        Element scrollParent,
-        int currentIndex,
-        int x,
-        int y) {
+    public static int positionElementInside(Element element, Element parent, int currentIndex, int x, int y) {
 
         if ((x == -1) && (y == -1)) {
             // this is wrong usage, do nothing
@@ -1442,7 +1435,7 @@ public final class DomUtil {
             int height = 0;
             if (y != -1) {
                 // check if the mouse pointer is within the height of the element 
-                top = DomUtil.getRelativeY(y, child, scrollParent);
+                top = DomUtil.getRelativeY(y, child);
                 height = child.getOffsetHeight();
                 if ((top <= 0) || (top >= height)) {
                     previousTop = top;
@@ -1519,24 +1512,6 @@ public final class DomUtil {
         parent.appendChild(element);
         currentIndex = parent.getChildCount() - 1;
         return currentIndex;
-    }
-
-    /**
-     * Positions an element inside the given parent, reordering the content of the parent and returns the new position index.<p>
-     * This is none absolute positioning. Use for drag and drop reordering of drop targets.<p>
-     * Use <code>-1</code> for x or y to ignore one ordering orientation.<p>
-     * 
-     * @param element the child element
-     * @param parent the parent element
-     * @param currentIndex the current index position of the element, use -1 if element is not attached to the parent yet 
-     * @param x the client x position, use <code>-1</code> to ignore x position 
-     * @param y the client y position, use <code>-1</code> to ignore y position
-     * 
-     * @return the new index position
-     */
-    public static int positionElementInside(Element element, Element parent, int currentIndex, int x, int y) {
-
-        return positionElementInside(element, parent, null, currentIndex, x, y);
     }
 
     /**

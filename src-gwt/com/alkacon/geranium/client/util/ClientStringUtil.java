@@ -568,7 +568,6 @@ public final class ClientStringUtil {
      * </ul><p>
      * 
      * @param source the string to escape
-     * @param doubleEscape if <code>false</code>, all entities that already are escaped are left untouched
      * 
      * @return the escaped string
      */
