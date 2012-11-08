@@ -1206,7 +1206,25 @@ public final class DomUtil {
      */
     public static int getRelativeY(int y, Element target) {
 
-        return (y - target.getAbsoluteTop()) + /* target.getScrollTop() +*/target.getOwnerDocument().getScrollTop();
+        return getRelativeY(y, target, null);
+    }
+
+    /**
+     * Gets the vertical position of the given y-coordinate relative to a given element.<p>
+     * 
+     * @param y the coordinate to use 
+     * @param target the element whose coordinate system is to be used
+     * @param scrollParent the scroll parent of the target element
+     * 
+     * @return the relative vertical position
+     * 
+     * @see com.google.gwt.event.dom.client.MouseEvent#getRelativeY(com.google.gwt.dom.client.Element)
+     */
+    public static int getRelativeY(int y, Element target, Element scrollParent) {
+
+        return (y - target.getAbsoluteTop())
+            + (scrollParent != null ? scrollParent.getScrollTop() : 0)
+            + target.getOwnerDocument().getScrollTop();
     }
 
     /**
@@ -1381,13 +1399,20 @@ public final class DomUtil {
      * 
      * @param element the child element
      * @param parent the parent element
+     * @param scrollParent the scroll parent element
      * @param currentIndex the current index position of the element, use -1 if element is not attached to the parent yet 
      * @param x the client x position, use <code>-1</code> to ignore x position 
      * @param y the client y position, use <code>-1</code> to ignore y position
      * 
      * @return the new index position
      */
-    public static int positionElementInside(Element element, Element parent, int currentIndex, int x, int y) {
+    public static int positionElementInside(
+        Element element,
+        Element parent,
+        Element scrollParent,
+        int currentIndex,
+        int x,
+        int y) {
 
         if ((x == -1) && (y == -1)) {
             // this is wrong usage, do nothing
@@ -1405,7 +1430,7 @@ public final class DomUtil {
             if (child == element) {
                 indexCorrection = 1;
             }
-            String positioning = child.getStyle().getPosition();
+            String positioning = DomUtil.getCurrentStyle(child, Style.position);
             if (Position.ABSOLUTE.getCssName().equals(positioning) || Position.FIXED.getCssName().equals(positioning)) {
                 // only not 'position:absolute' elements into account, 
                 // not visible children will be excluded in the next condition
@@ -1417,7 +1442,7 @@ public final class DomUtil {
             int height = 0;
             if (y != -1) {
                 // check if the mouse pointer is within the height of the element 
-                top = DomUtil.getRelativeY(y, child);
+                top = DomUtil.getRelativeY(y, child, scrollParent);
                 height = child.getOffsetHeight();
                 if ((top <= 0) || (top >= height)) {
                     previousTop = top;
@@ -1494,6 +1519,24 @@ public final class DomUtil {
         parent.appendChild(element);
         currentIndex = parent.getChildCount() - 1;
         return currentIndex;
+    }
+
+    /**
+     * Positions an element inside the given parent, reordering the content of the parent and returns the new position index.<p>
+     * This is none absolute positioning. Use for drag and drop reordering of drop targets.<p>
+     * Use <code>-1</code> for x or y to ignore one ordering orientation.<p>
+     * 
+     * @param element the child element
+     * @param parent the parent element
+     * @param currentIndex the current index position of the element, use -1 if element is not attached to the parent yet 
+     * @param x the client x position, use <code>-1</code> to ignore x position 
+     * @param y the client y position, use <code>-1</code> to ignore y position
+     * 
+     * @return the new index position
+     */
+    public static int positionElementInside(Element element, Element parent, int currentIndex, int x, int y) {
+
+        return positionElementInside(element, parent, null, currentIndex, x, y);
     }
 
     /**
