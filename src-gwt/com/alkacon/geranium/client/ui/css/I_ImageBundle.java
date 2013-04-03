@@ -157,6 +157,20 @@ public interface I_ImageBundle extends ClientBundle {
          * 
          * @return the CSS class name
          */
+        String arrowDownIcon();
+
+        /** 
+         * Access method.<p>
+         * 
+         * @return the CSS class name
+         */
+        String arrowUpIcon();
+
+        /** 
+         * Access method.<p>
+         * 
+         * @return the CSS class name
+         */
         String addIcon();
 
         /** 
