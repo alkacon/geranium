@@ -178,6 +178,13 @@ public interface I_ImageBundle extends ClientBundle {
          * 
          * @return the CSS class name
          */
+        String bullsEyeIcon();
+
+        /** 
+         * Access method.<p>
+         * 
+         * @return the CSS class name
+         */
         String changeOrderIcon();
 
         /** Access method.<p>
