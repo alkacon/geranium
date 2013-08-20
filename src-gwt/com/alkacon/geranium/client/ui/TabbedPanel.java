@@ -262,7 +262,7 @@ public class TabbedPanel<E extends Widget> extends Composite {
     public void add(E tabContent, String tabName) {
 
         tabContent.addStyleName(I_LayoutBundle.INSTANCE.generalCss().cornerAll());
-        m_tabPanel.add(tabContent, tabName);
+        m_tabPanel.add(tabContent, DomUtil.stripHtml(tabName));
 
         Element tabRootEl = m_tabPanel.getElement();
         // set an additional css class for the parent element of the .gwt-TabLayoutPanelTabs element
@@ -338,7 +338,7 @@ public class TabbedPanel<E extends Widget> extends Composite {
     public void addWithLeftMargin(E tabContent, String tabName) {
 
         tabContent.addStyleName(I_LayoutBundle.INSTANCE.generalCss().cornerAll());
-        m_tabPanel.add(tabContent, tabName);
+        m_tabPanel.add(tabContent, DomUtil.stripHtml(tabName));
 
         int tabIndex = m_tabPanel.getWidgetIndex(tabContent);
         Element tabElement = getTabElement(tabIndex);
