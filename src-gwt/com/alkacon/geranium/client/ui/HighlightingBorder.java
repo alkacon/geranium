@@ -33,6 +33,7 @@ import com.google.gwt.dom.client.Style;
 import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.Element;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HTML;
@@ -104,15 +105,21 @@ public class HighlightingBorder extends Composite {
     @UiField
     protected DivElement m_borderTop;
 
+    /** The positioning parent element. */
+    private Element m_positioningParent;
+
     /**
      * Constructor.<p>
      * 
-     * @param position the position data
+     * @param positioningParent the element the border is positioned around, position is set relative to it
      * @param color the border color
      */
-    public HighlightingBorder(PositionBean position, BorderColor color) {
+    public HighlightingBorder(Element positioningParent, BorderColor color) {
 
-        this(position.getHeight(), position.getWidth(), position.getLeft(), position.getTop(), color);
+        initWidget(uiBinder.createAndBindUi(this));
+        getWidget().addStyleName(color.getCssClass());
+        m_positioningParent = positioningParent;
+        resetPosition();
     }
 
     /**
@@ -133,6 +140,17 @@ public class HighlightingBorder extends Composite {
     }
 
     /**
+     * Constructor.<p>
+     * 
+     * @param position the position data
+     * @param color the border color
+     */
+    public HighlightingBorder(PositionBean position, BorderColor color) {
+
+        this(position.getHeight(), position.getWidth(), position.getLeft(), position.getTop(), color);
+    }
+
+    /**
      * Hides the border.<p>
      */
     public void hide() {
@@ -141,13 +159,15 @@ public class HighlightingBorder extends Composite {
     }
 
     /**
-     * Sets the border position.<p>
-     * 
-     * @param position the position data
+     * Recalculates the position and dimension when a positioning parent is given.<p>
      */
-    public void setPosition(PositionBean position) {
+    public void resetPosition() {
 
-        setPosition(position.getHeight(), position.getWidth(), position.getLeft(), position.getTop());
+        // fail if no positioning parent given
+        assert m_positioningParent != null;
+        if (m_positioningParent != null) {
+            setPosition(m_positioningParent.getOffsetHeight(), m_positioningParent.getOffsetWidth(), 0, 0);
+        }
     }
 
     /**
@@ -163,13 +183,15 @@ public class HighlightingBorder extends Composite {
         positionLeft -= BORDER_OFFSET;
 
         // make sure highlighting does not introduce additional horizontal scroll-bars
-        if (positionLeft < 0) {
+        if ((m_positioningParent == null) && (positionLeft < 0)) {
             // position left should not be negative
             width += positionLeft;
             positionLeft = 0;
         }
         width += (2 * BORDER_OFFSET) - BORDER_WIDTH;
-        if ((Window.getClientWidth() < (width + positionLeft)) && (Window.getScrollLeft() == 0)) {
+        if ((m_positioningParent == null)
+            && (Window.getClientWidth() < (width + positionLeft))
+            && (Window.getScrollLeft() == 0)) {
             // highlighting should not extend over the right hand 
             width = Window.getClientWidth() - (positionLeft + BORDER_WIDTH);
         }
@@ -178,6 +200,16 @@ public class HighlightingBorder extends Composite {
         style.setTop(positionTop - BORDER_OFFSET, Unit.PX);
         setHeight((height + (2 * BORDER_OFFSET)) - BORDER_WIDTH);
         setWidth(width);
+    }
+
+    /**
+     * Sets the border position.<p>
+     * 
+     * @param position the position data
+     */
+    public void setPosition(PositionBean position) {
+
+        setPosition(position.getHeight(), position.getWidth(), position.getLeft(), position.getTop());
     }
 
     /**
