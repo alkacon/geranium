@@ -61,7 +61,7 @@
 /** The highlight border color. Use it for highlighting special UI components e.g. errors. */
 @def borderColorHighlight #B31B34;
 /** The default border radius. */
-@def borderRadius 5px;
+@def borderRadius 3px;
 /** The default border radius for buttons. */
 @def borderRadiusButton 8px;
 
@@ -175,16 +175,16 @@
  */
  
  /** Used for popups and overlays. */
-@def zIndexPopup 2000000;
+@def zIndexPopup 200000;
 
-@def zIndexGroupContainer 1900000;
+@def zIndexGroupContainer 190000;
 /** Used during drag and drop. */
-@def zIndexDND 2500000;
+@def zIndexDND 250000;
 /** Used for highlighting. */
-@def zIndexHighlighting 1500000;
+@def zIndexHighlighting 150000;
 /** Used for positioned UI elements. */
-@def zIndexInline 1000000;
+@def zIndexInline 100000;
 
 /** For the menu. */ 
-@def zIndexMenu 1600000;
+@def zIndexMenu 160000;
 
