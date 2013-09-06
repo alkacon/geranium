@@ -57,6 +57,8 @@
     border-left-color: value("constants.css.borderColorDialog");
     font-family: value("constants.css.fontFamily");
     overflow: visible;
+    box-shadow: 6px 6px 12px value("constants.css.boxShadowColorOther");
+	border-radius: 12px;
 }
 
 div.frameDialog div.popupMainContent {
@@ -75,32 +77,10 @@ div.frameDialog div.popupButtonPanel {
 	bottom:0px;
 }
 
-/** browser specific styles **/
-@if user.agent gecko1_8 gecko{
-	.popupContent{
-		-moz-box-shadow: 6px 6px 12px value("constants.css.boxShadowColorOther");
-		-moz-border-radius: 12px;
-	}
-	.popupMainContent, .caption{
-		-moz-border-radius: 8px;
-	}
-} @elif user.agent safari {
-	.popupContent{
-		-webkit-box-shadow: 6px 6px 12px value("constants.css.boxShadowColorOther");
-		-webkit-border-radius: 12px;
-	}
-	.popupMainContent, .caption{
-		-webkit-border-radius: 8px;
-	}
-} @elif user.agent opera ie9 {
-	.popupContent{
-		box-shadow: 6px 6px 12px value("constants.css.boxShadowColorOther");
-		border-radius: 12px;
-	}
-	.popupMainContent, .caption{
+.popupMainContent, .caption{
 		border-radius: 8px;
-	}
-} @elif user.agent ie6 ie8 {
+}
+@if user.agent ie6 ie8 {
 	div.popupContent{
 		/** No shadow for IE7 and IE8. The necessary filter would prevent the use of other filters like opacity. */
 		
@@ -181,11 +161,7 @@ div.frameDialog div.popupButtonPanel {
 	margin-left: value("constants.css.defaultSpace");
 }
 
-@if user.agent ie6 {
-    .popupOverlay{
-        filter: literal("alpha(opacity = 50)");
-    }
-} @elif user.agent ie8 {
+@if user.agent ie8 {
 	.popupOverlay{
 		-ms-filter: "alpha(opacity = 50)";
 	}
