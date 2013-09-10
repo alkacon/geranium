@@ -139,6 +139,20 @@ public class PositionBean {
      */
     public static PositionBean getInnerDimensions(Element panel) {
 
+        return getInnerDimensions(panel, 2);
+    }
+
+    /**
+     * Returns a position info representing the dimensions of all visible child elements of the given panel (excluding elements with position:absolute).
+     * If the panel has no visible child elements, it's outer dimensions are returned.<p>
+     * 
+     * @param panel the panel
+     * @param levels the levels to traverse down the DOM tree
+     * 
+     * @return the position info
+     */
+    private static PositionBean getInnerDimensions(Element panel, int levels) {
+
         boolean first = true;
         int top = 0;
         int left = 0;
@@ -149,20 +163,23 @@ public class PositionBean {
             String positioning = DomUtil.getCurrentStyle(child, Style.position);
             if (!Display.NONE.getCssName().equals(DomUtil.getCurrentStyle(child, Style.display))
                 && !(positioning.equalsIgnoreCase(Position.ABSOLUTE.getCssName()) || positioning.equalsIgnoreCase(Position.FIXED.getCssName()))) {
+                PositionBean childDimensions = levels > 0
+                ? getInnerDimensions(child, levels - 1)
+                : generatePositionInfo(panel);
                 if (first) {
                     first = false;
-                    top = child.getAbsoluteTop();
-                    left = child.getAbsoluteLeft();
-                    bottom = top + child.getOffsetHeight();
-                    right = left + child.getOffsetWidth();
+                    top = childDimensions.getTop();
+                    left = childDimensions.getLeft();
+                    bottom = top + childDimensions.getHeight();
+                    right = left + childDimensions.getWidth();
                 } else {
-                    int wTop = child.getAbsoluteTop();
+                    int wTop = childDimensions.getTop();
                     top = top < wTop ? top : wTop;
-                    int wLeft = child.getAbsoluteLeft();
+                    int wLeft = childDimensions.getLeft();
                     left = left < wLeft ? left : wLeft;
-                    int wBottom = wTop + child.getOffsetHeight();
+                    int wBottom = wTop + childDimensions.getHeight();
                     bottom = bottom > wBottom ? bottom : wBottom;
-                    int wRight = wLeft + child.getOffsetWidth();
+                    int wRight = wLeft + childDimensions.getWidth();
                     right = right > wRight ? right : wRight;
                 }
             }
