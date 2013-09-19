@@ -50,6 +50,25 @@ div.cmsTextButton, div.cmsTransparentButton, div.cmsMenuButton, div.cmsImageButt
 	display:inline-block;
 	text-align:center;
     font-weight:bold;
+    user-select: none;
+}
+/* disables text selection */
+@if user.agent gecko gecko1_8 {
+	div.cmsTextButton, div.cmsTransparentButton, div.cmsMenuButton, div.cmsImageButton {
+		-moz-user-select: none;
+	}
+} @elif user.agent safari {
+	div.cmsTextButton, div.cmsTransparentButton, div.cmsMenuButton, div.cmsImageButton {
+		-webkit-user-select: none;
+	}
+} @elif user.agent opera {
+	div.cmsTextButton, div.cmsTransparentButton, div.cmsMenuButton, div.cmsImageButton {
+		-o-user-select: none;
+	}
+} @elif user.agent ie9 {
+	div.cmsTextButton, div.cmsTransparentButton, div.cmsMenuButton, div.cmsImageButton {
+		-ms-user-select: none;
+	}
 }
 
 /** Specific button styles (text-, transparent-, menu- and image-Button). */
