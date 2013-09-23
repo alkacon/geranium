@@ -139,7 +139,7 @@ public class PositionBean {
      */
     public static PositionBean getInnerDimensions(Element panel) {
 
-        return getInnerDimensions(panel, 2);
+        return getInnerDimensions(panel, 2, false);
     }
 
     /**
@@ -148,23 +148,30 @@ public class PositionBean {
      * 
      * @param panel the panel
      * @param levels the levels to traverse down the DOM tree
+     * @param includeSelf <code>true</code> to include the outer dimensions of the given panel
      * 
      * @return the position info
      */
-    private static PositionBean getInnerDimensions(Element panel, int levels) {
+    private static PositionBean getInnerDimensions(Element panel, int levels, boolean includeSelf) {
 
         boolean first = true;
         int top = 0;
         int left = 0;
         int bottom = 0;
         int right = 0;
+        if (includeSelf) {
+            top = panel.getAbsoluteTop();
+            left = panel.getAbsoluteLeft();
+            bottom = top + panel.getOffsetHeight();
+            right = left + panel.getOffsetWidth();
+        }
         Element child = panel.getFirstChildElement();
         while (child != null) {
             String positioning = DomUtil.getCurrentStyle(child, Style.position);
             if (!Display.NONE.getCssName().equals(DomUtil.getCurrentStyle(child, Style.display))
                 && !(positioning.equalsIgnoreCase(Position.ABSOLUTE.getCssName()) || positioning.equalsIgnoreCase(Position.FIXED.getCssName()))) {
                 PositionBean childDimensions = levels > 0
-                ? getInnerDimensions(child, levels - 1)
+                ? getInnerDimensions(child, levels - 1, true)
                 : generatePositionInfo(panel);
                 if (first) {
                     first = false;
