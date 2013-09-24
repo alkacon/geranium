@@ -42,7 +42,9 @@ jar {
 			'Implementation-Version': version
 	}
 	baseName 'geranium-client'
-	from sourceSets.main.allSource
+	from (sourceSets.main.allSource){
+        include '**/*.java'
+    }
 	exclude '**/.gitignore'
 }
 
