@@ -1,0 +1,125 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'signing'
+
+product_name = "Geranium"
+sourceCompatibility = 1.6
+version = 2.0
+buildDir = "../../buildGeranium"
+
+repositories {
+	   mavenCentral()
+}
+
+configurations {
+	compile {
+		description = 'Includes all dependencies required for compile and runtime'
+		transitive = false
+	}
+}
+
+dependencies {
+	compile group: 'com.google.gwt', name: 'gwt-dev', version: '2.5.1'
+	compile group: 'com.google.gwt', name: 'gwt-user', version: '2.5.1'
+	compile group: 'com.google.gwt', name: 'gwt-servlet', version: '2.5.1'
+	compile group: 'org.timepedia.exporter', name: 'gwtexporter', version: '2.4.0'
+	compile group: 'com.google.guava', name: 'guava', version: '14.0.1'
+	compile group: 'com.google.guava', name: 'guava-gwt', version: '14.0.1'
+}
+
+sourceSets{
+	main {
+		java.srcDir 'src'
+		java.srcDir 'src-gwt'
+		resources.srcDir 'src'
+		resources.srcDir 'src-gwt'
+	}
+}
+
+jar {
+	manifest {
+		attributes 'Implementation-Title': 'Alkacon Geranium',
+			'Implementation-Version': version
+	}
+	baseName 'geranium-client'
+	from sourceSets.main.allSource
+	exclude '**/.gitignore'
+}
+
+javadoc {
+	project.configure(options) {
+		memberLevel = org.gradle.external.javadoc.JavadocMemberLevel.PROTECTED
+		charSet = "UTF-8"
+		docTitle = "$product_name"
+		windowTitle = "$product_name"
+		header = "<b>$product_name</b>"
+		author = "true"
+		use = "true"
+	}
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+	classifier = 'javadoc'
+	from "${buildDir}/docs/javadoc"
+}
+
+task sourcesJar(type: Jar) {
+	from sourceSets.main.allSource
+	classifier = 'sources'
+}
+
+artifacts {
+	archives jar
+	archives javadocJar
+	archives sourcesJar
+}
+
+signing {
+	sign configurations.archives
+}
+
+uploadArchives {
+	repositories {
+		mavenDeployer {
+			beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+ 
+			repository(url: "http://localhost:8081/nexus/content/repositories/releases") {
+			  authentication(userName: 'deployment', password: 'deployment123')
+			}
+ 
+			pom.project {
+			   name 'Geranium'
+			   packaging 'jar'
+			   description 'A GWT UI framework'
+			   url 'http://www.github.com/alkacon/geranium'
+			   groupId 'com.alkacon'
+			   scm {
+				   url 'scm:git@github.com:alkacon/geranium.git'
+				   connection 'scm:git@github.com:alkacon/geranium.git'
+				   developerConnection 'scm:git@github.com:alkacon/geranium.git'
+			   }
+ 
+			   licenses {
+				   license {
+					   name 'The Apache Software License, Version 2.0'
+					   url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+					   distribution 'repo'
+				   }
+			   }
+ 
+			   developers {
+				   developer {
+					   id 'tHerrmann'
+					   name 'Tobias Herrmann'
+				   }
+			   }
+		   }
+		}
+	}
+}
+
+// fixed issue with libraries containing both .java and .class files
+tasks.withType(JavaCompile) {
+	options.compilerArgs += ["-sourcepath", ""]
+}
+
