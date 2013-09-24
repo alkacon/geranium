@@ -285,6 +285,9 @@ public final class DomUtil {
         opacity,
 
         /** CSS Property. */
+        overflow,
+
+        /** CSS Property. */
         padding,
 
         /** CSS Property. */

@@ -28,6 +28,7 @@ import com.alkacon.geranium.client.util.DomUtil.Style;
 
 import com.google.gwt.dom.client.Element;
 import com.google.gwt.dom.client.Style.Display;
+import com.google.gwt.dom.client.Style.Overflow;
 import com.google.gwt.dom.client.Style.Position;
 import com.google.gwt.user.client.ui.UIObject;
 
@@ -159,38 +160,41 @@ public class PositionBean {
         int left = 0;
         int bottom = 0;
         int right = 0;
-        if (includeSelf) {
-            top = panel.getAbsoluteTop();
-            left = panel.getAbsoluteLeft();
-            bottom = top + panel.getOffsetHeight();
-            right = left + panel.getOffsetWidth();
-        }
-        Element child = panel.getFirstChildElement();
-        while (child != null) {
-            String positioning = DomUtil.getCurrentStyle(child, Style.position);
-            if (!Display.NONE.getCssName().equals(DomUtil.getCurrentStyle(child, Style.display))
-                && !(positioning.equalsIgnoreCase(Position.ABSOLUTE.getCssName()) || positioning.equalsIgnoreCase(Position.FIXED.getCssName()))) {
-                PositionBean childDimensions = levels > 0
-                ? getInnerDimensions(child, levels - 1, true)
-                : generatePositionInfo(panel);
-                if (first) {
-                    first = false;
-                    top = childDimensions.getTop();
-                    left = childDimensions.getLeft();
-                    bottom = top + childDimensions.getHeight();
-                    right = left + childDimensions.getWidth();
-                } else {
-                    int wTop = childDimensions.getTop();
-                    top = top < wTop ? top : wTop;
-                    int wLeft = childDimensions.getLeft();
-                    left = left < wLeft ? left : wLeft;
-                    int wBottom = wTop + childDimensions.getHeight();
-                    bottom = bottom > wBottom ? bottom : wBottom;
-                    int wRight = wLeft + childDimensions.getWidth();
-                    right = right > wRight ? right : wRight;
-                }
+        // if overflow is set to hidden, use the outer dimensions
+        if (!Overflow.HIDDEN.getCssName().equals(DomUtil.getCurrentStyle(panel, Style.overflow))) {
+            if (includeSelf) {
+                top = panel.getAbsoluteTop();
+                left = panel.getAbsoluteLeft();
+                bottom = top + panel.getOffsetHeight();
+                right = left + panel.getOffsetWidth();
             }
-            child = child.getNextSiblingElement();
+            Element child = panel.getFirstChildElement();
+            while (child != null) {
+                String positioning = DomUtil.getCurrentStyle(child, Style.position);
+                if (!Display.NONE.getCssName().equals(DomUtil.getCurrentStyle(child, Style.display))
+                    && !(positioning.equalsIgnoreCase(Position.ABSOLUTE.getCssName()) || positioning.equalsIgnoreCase(Position.FIXED.getCssName()))) {
+                    PositionBean childDimensions = levels > 0
+                    ? getInnerDimensions(child, levels - 1, true)
+                    : generatePositionInfo(panel);
+                    if (first) {
+                        first = false;
+                        top = childDimensions.getTop();
+                        left = childDimensions.getLeft();
+                        bottom = top + childDimensions.getHeight();
+                        right = left + childDimensions.getWidth();
+                    } else {
+                        int wTop = childDimensions.getTop();
+                        top = top < wTop ? top : wTop;
+                        int wLeft = childDimensions.getLeft();
+                        left = left < wLeft ? left : wLeft;
+                        int wBottom = wTop + childDimensions.getHeight();
+                        bottom = bottom > wBottom ? bottom : wBottom;
+                        int wRight = wLeft + childDimensions.getWidth();
+                        right = right > wRight ? right : wRight;
+                    }
+                }
+                child = child.getNextSiblingElement();
+            }
         }
         if (!first) {
             PositionBean result = new PositionBean();
