@@ -45,6 +45,10 @@ div.optionBar{
 	max-width: none;
 }
 
+div.optionBar, div.optionBar *{
+	box-sizing: content-box;
+	-moz-box-sizing: content-box;
+}
 
 div.optionBar div, div.optionBar span {
 	margin: 0;
