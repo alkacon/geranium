@@ -27,6 +27,8 @@ package com.alkacon.geranium.client.util;
 import com.alkacon.geranium.client.util.DomUtil.Style;
 
 import com.google.gwt.dom.client.Element;
+import com.google.gwt.dom.client.Node;
+import com.google.gwt.dom.client.NodeList;
 import com.google.gwt.dom.client.Style.Display;
 import com.google.gwt.dom.client.Style.Overflow;
 import com.google.gwt.dom.client.Style.Position;
@@ -153,7 +155,7 @@ public class PositionBean {
      * 
      * @return the position info
      */
-    private static PositionBean getInnerDimensions(Element panel, int levels, boolean includeSelf) {
+    public static PositionBean getInnerDimensions(Element panel, int levels, boolean includeSelf) {
 
         boolean first = true;
         int top = 0;
@@ -162,11 +164,23 @@ public class PositionBean {
         int right = 0;
         // if overflow is set to hidden, use the outer dimensions
         if (!Overflow.HIDDEN.getCssName().equals(DomUtil.getCurrentStyle(panel, Style.overflow))) {
+            if (!includeSelf) {
+                // check for any text content
+                NodeList<Node> children = panel.getChildNodes();
+                for (int i = 0; i < children.getLength(); i++) {
+                    if ((children.getItem(i).getNodeType() == Node.TEXT_NODE)
+                        && (children.getItem(i).getNodeValue().trim().length() > 0)) {
+                        includeSelf = true;
+                        break;
+                    }
+                }
+            }
             if (includeSelf) {
                 top = panel.getAbsoluteTop();
                 left = panel.getAbsoluteLeft();
                 bottom = top + panel.getOffsetHeight();
                 right = left + panel.getOffsetWidth();
+                first = false;
             }
             Element child = panel.getFirstChildElement();
             while (child != null) {
