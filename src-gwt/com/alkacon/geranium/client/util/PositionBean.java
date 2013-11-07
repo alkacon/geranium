@@ -184,6 +184,17 @@ public class PositionBean {
             }
             Element child = panel.getFirstChildElement();
             while (child != null) {
+                String tagName = child.getTagName();
+                if (tagName.equalsIgnoreCase("br")
+                    || tagName.equalsIgnoreCase("tr")
+                    || tagName.equalsIgnoreCase("thead")
+                    || tagName.equalsIgnoreCase("tfoot")
+                    || tagName.equalsIgnoreCase("script")
+                    || tagName.equalsIgnoreCase("style")) {
+                    // ignore tags with no relevant position info
+                    child = child.getNextSiblingElement();
+                    continue;
+                }
                 String positioning = DomUtil.getCurrentStyle(child, Style.position);
                 if (!Display.NONE.getCssName().equals(DomUtil.getCurrentStyle(child, Style.display))
                     && !(positioning.equalsIgnoreCase(Position.ABSOLUTE.getCssName()) || positioning.equalsIgnoreCase(Position.FIXED.getCssName()))) {
