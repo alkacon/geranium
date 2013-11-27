@@ -24,7 +24,6 @@
 
 package com.alkacon.geranium.client.ui.input;
 
-import com.google.common.base.Objects;
 import com.google.gwt.event.logical.shared.ValueChangeEvent;
 import com.google.gwt.event.logical.shared.ValueChangeHandler;
 import com.google.gwt.event.shared.EventBus;
@@ -103,7 +102,7 @@ public class DefaultStringModel implements I_StringModel {
             m_active = true;
             try {
 
-                boolean changed = !Objects.equal(value, m_value);
+                boolean changed = !((m_value == value) || ((m_value != null) && m_value.equals(value)));
                 m_value = value;
                 if (notify && changed) {
                     ValueChangeEvent.fire(this, value);
