@@ -61,10 +61,6 @@ div.cmsTextButton, div.cmsTransparentButton, div.cmsMenuButton, div.cmsImageButt
 	div.cmsTextButton, div.cmsTransparentButton, div.cmsMenuButton, div.cmsImageButton {
 		-webkit-user-select: none;
 	}
-} @elif user.agent opera {
-	div.cmsTextButton, div.cmsTransparentButton, div.cmsMenuButton, div.cmsImageButton {
-		-o-user-select: none;
-	}
 } @elif user.agent ie9 {
 	div.cmsTextButton, div.cmsTransparentButton, div.cmsMenuButton, div.cmsImageButton {
 		-ms-user-select: none;
